@@ -25,7 +25,7 @@ export default {
       return this.exchange.type
     },
     volume() {
-      return this.$n(this.exchange.volume, 'currency')
+      return this.$n(this.exchange.volume, 'volume')
     },
   },
 }

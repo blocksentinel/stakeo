@@ -57,8 +57,15 @@ export default {
             style: 'currency',
             currency: 'USD',
           },
+          volume: {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+          },
           crypto: {
             minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
           },
         },
       },
