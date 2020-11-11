@@ -1,6 +1,6 @@
 <template>
   <div class="panel is-primary">
-    <p class="panel-heading">
+    <p class="panel-heading is-size-6">
       Staking Calculator
       <b-switch
         v-model="advanced"
@@ -11,7 +11,11 @@
       >
     </p>
     <div class="panel-block">
-      <b-field label="Volume (USD)" :message="volumeMessage" class="control">
+      <b-field
+        label="TradeHub Volume (USD)"
+        :message="volumeMessage"
+        class="control"
+      >
         <b-slider
           v-model="volume"
           :custom-formatter="formatVolume"
@@ -21,7 +25,7 @@
       </b-field>
     </div>
     <div class="panel-block">
-      <b-field label="Fee" :message="feeMessage" class="control">
+      <b-field label="Trading Fees" :message="feeMessage" class="control">
         <b-slider
           v-model="fee"
           :custom-formatter="formatFee"
