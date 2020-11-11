@@ -7,6 +7,7 @@
         type="is-secondary"
         size="is-small"
         class="is-pulled-right mr-0"
+        left-label
         >{{ advanced ? 'Advanced' : 'Basic' }}</b-switch
       >
     </p>
