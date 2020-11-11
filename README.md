@@ -1,4 +1,4 @@
-# stakeo-ui
+# Stakeo
 
 ## Build Setup
 
