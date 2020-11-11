@@ -1,10 +1,9 @@
 <template>
-  <div>
-    <ExchangeItem
-      v-for="exchange in exchanges"
-      :key="exchange.id"
-      :exchange="exchange"
-    />
+  <div class="panel is-secondary">
+    <div class="panel-heading">30 Day Volume</div>
+    <div v-for="exchange in exchanges" :key="exchange.id" class="panel-block">
+      <ExchangeItem :exchange="exchange" />
+    </div>
   </div>
 </template>
 

@@ -1,17 +1,11 @@
 <template>
-  <div>
-    <div class="box mb-3">
-      <div class="content">
-        <p>
-          <strong>{{ name }}</strong>
-          <br />
-          {{ volume }}
-        </p>
-        <p class="mb-0 is-size-7 has-text-centered">
-          <small>{{ type }}</small>
-        </p>
-      </div>
-    </div>
+  <div class="control">
+    <p>
+      <strong>{{ name }}</strong>
+      <small class="is-size-7 is-italic">{{ type }}</small>
+      <br />
+      {{ volume }}
+    </p>
   </div>
 </template>
 

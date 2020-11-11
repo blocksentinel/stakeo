@@ -9,11 +9,11 @@
       numbers at times. No warranty, not financial advice.
     </b-message>
     <div class="columns">
-      <div class="column is-8">
+      <div class="column is-9">
         <Calculator />
         <FeeEstimate />
       </div>
-      <div class="column is-4">
+      <div class="column is-3">
         <Exchanges />
       </div>
     </div>
