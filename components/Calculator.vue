@@ -11,7 +11,7 @@
       >
     </p>
     <div class="panel-block">
-      <b-field label="Volume" :message="volumeMessage" class="control">
+      <b-field label="Volume (USD)" :message="volumeMessage" class="control">
         <b-slider
           v-model="volume"
           :custom-formatter="formatVolume"
@@ -84,16 +84,16 @@ export default {
       switcheoStats: 'switcheoStats',
     }),
     volumeMessage() {
-      return `Monthly volume of ${this.formatVolume(this.volume)}`
+      return `Monthly volume of ${this.$n(this.volume * 1000000, 'volume')}`
     },
     feeMessage() {
       return `Average fee of ${this.formatFee(this.fee)}`
     },
     stakeMessage() {
-      return `Your total stake is ${this.$n(this.stake, 'crypto')}`
+      return `Your total Switcheo stake is ${this.$n(this.stake, 'crypto')}`
     },
     bondedMessage() {
-      return `The total bonded tokens is ${this.$n(this.bonded, 'crypto')}`
+      return `Total bonded Switcheo is ${this.$n(this.bonded, 'crypto')}`
     },
   },
   watch: {
@@ -127,6 +127,10 @@ export default {
       })
     },
     formatVolume(val) {
+      if (val > 999) {
+        return `${val / 1000} billion`
+      }
+
       return `${val} million`
     },
     formatFee(val) {
