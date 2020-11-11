@@ -21,10 +21,40 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   async fetch() {
     await this.$store.dispatch('calculator/getSwitcheoStats')
     await this.$store.dispatch('calculator/getExchanges')
+  },
+  data() {
+    return {
+      getSwitcheoStatsTask: null,
+      getExchangesTask: null,
+    }
+  },
+  mounted() {
+    this.getSwitcheoStatsTask = setInterval(() => {
+      this.getSwitcheoStats()
+    }, 30000)
+    this.getExchangesTask = setInterval(() => {
+      this.getExchanges()
+    }, 60000)
+  },
+  beforeDestroy() {
+    if (this.getSwitcheoStatsTask !== null) {
+      clearInterval(this.getSwitcheoStatsTask)
+    }
+    if (this.getExchangesTask !== null) {
+      clearInterval(this.getExchangesTask)
+    }
+  },
+  methods: {
+    ...mapActions('calculator', {
+      getSwitcheoStats: 'getSwitcheoStats',
+      getExchanges: 'getExchanges',
+    }),
   },
 }
 </script>
