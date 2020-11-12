@@ -1,20 +1,42 @@
 <template>
   <div>
-    <section class="main-content columns">
-      <div class="column is-8 is-offset-2">
-        <nuxt />
-      </div>
-    </section>
+    <header>
+      <b-navbar type="is-primary" wrapper-class="container">
+        <template slot="brand">
+          <b-navbar-item tag="router-link" :to="localePath({ path: '/' })">
+            <img src="../assets/logo-light.svg" alt="Stakeo" width="32" />
+          </b-navbar-item>
+        </template>
+        <template slot="end">
+          <b-navbar-item
+            href="https://switcheo.exchange/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Switcheo
+          </b-navbar-item>
+          <b-navbar-item
+            href="https://dem.exchange/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Demex
+          </b-navbar-item>
+        </template>
+      </b-navbar>
+    </header>
+    <div class="container">
+      <nuxt />
+    </div>
     <footer class="footer has-text-centered">
       <p>
-        Made by
+        Made for the Switcheo Community by
         <a
           href="https://blocksentinel.dev/"
           target="_blank"
           rel="noopener noreferer"
           >Block Sentinel</a
-        >
-        for the Switcheo Community.<br />
+        >.<br />
         <small
           ><a
             href="https://www.coingecko.com/"
@@ -34,7 +56,7 @@ import { mapActions } from 'vuex'
 export default {
   async fetch() {
     await this.$store.dispatch('calculator/getSwitcheoStats')
-    await this.$store.dispatch('calculator/getExchanges')
+    await this.$store.dispatch('exchange/getExchanges')
   },
   data() {
     return {
@@ -61,6 +83,8 @@ export default {
   methods: {
     ...mapActions('calculator', {
       getSwitcheoStats: 'getSwitcheoStats',
+    }),
+    ...mapActions('exchange', {
       getExchanges: 'getExchanges',
     }),
   },

@@ -10,6 +10,11 @@ $secondary-light: findLightColor($secondary);
 $secondary-dark: findDarkColor($secondary);
 $secondary-invert: findColorInvert($secondary);
 
+$warning: #fceba4;
+$warning-light: findLightColor($warning);
+$warning-dark: findDarkColor($warning);
+$warning-invert: findColorInvert($warning);
+
 $addColors: (
   "primary": (
     $primary,
@@ -22,6 +27,12 @@ $addColors: (
     $secondary-invert,
     $secondary-light,
     $secondary-dark,
+  ),
+  "warning": (
+    $warning,
+    $warning-invert,
+    $warning-light,
+    $warning-dark,
   ),
 );
 $colors: map-merge($colors, $addColors);
