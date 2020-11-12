@@ -1,7 +1,6 @@
 export const state = () => ({
   feeEstimate: null,
   switcheoStats: null,
-  exchanges: [],
 })
 
 export const mutations = {
@@ -10,9 +9,6 @@ export const mutations = {
   },
   setSwitcheoStats(state, value) {
     state.switcheoStats = value
-  },
-  setExchanges(state, value) {
-    state.exchanges = value
   },
 }
 
@@ -52,32 +48,6 @@ export const actions = {
       })
       .then((response) => {
         commit('setSwitcheoStats', response.data)
-      })
-      .catch((error) => {
-        // let errors = null
-        // if (
-        //   error.response.status === 400 &&
-        //   error.response.data.errors !== undefined
-        // ) {
-        //   errors = error.response.data.errors
-        // }
-        // commit(SET_CUSTOMER_UPDATE_STATUS, {
-        //   status: false,
-        //   id: null,
-        //   errors,
-        // })
-        console.log(error)
-      })
-  },
-  async getExchanges({ commit }, payload) {
-    await this.$axios
-      .get(`https://api.stakeo.com/api/exchange/volume`, {
-        params: {
-          currency: 'usd',
-        },
-      })
-      .then((response) => {
-        commit('setExchanges', response.data.exchanges)
       })
       .catch((error) => {
         // let errors = null
