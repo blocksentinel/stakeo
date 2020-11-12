@@ -14,7 +14,15 @@
           rel="noopener noreferer"
           >Block Sentinel</a
         >
-        for the Switcheo Community.
+        for the Switcheo Community.<br />
+        <small
+          ><a
+            href="https://www.coingecko.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span>Price data provided by CoinGecko</span></a
+          ></small
+        >
       </p>
     </footer>
   </div>
