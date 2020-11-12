@@ -8,10 +8,10 @@
         size="is-small"
         class="is-pulled-right mr-0"
         left-label
-        >{{ advanced ? 'Advanced' : 'Basic' }}</b-switch
+        >Moon Mode</b-switch
       >
     </p>
-    <div class="panel-block">
+    <div class="panel-block is-flex-direction-column">
       <b-field
         label="TradeHub Volume (USD)"
         :message="volumeMessage"
@@ -20,10 +20,31 @@
         <b-slider
           v-model="volume"
           :custom-formatter="formatVolume"
-          :min="1"
+          :step="volumeStep"
+          :min="volumeMin"
           :max="volumeMax"
+          type="is-secondary"
+          tooltip-type="is-primary"
         />
       </b-field>
+      <div v-if="advanced" class="control">
+        <div class="columns">
+          <div class="column">
+            <b-field label="Volume Cap" class="control">
+              <b-numberinput
+                v-model="volumeMax"
+                size="is-small"
+                type="is-light"
+                :exponential="1"
+                :min="volumeMin"
+                :max="volumeUpperMax"
+                controls-alignment="right"
+                controls-position="compact"
+              />
+            </b-field>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="panel-block">
       <b-field label="Trading Fees" :message="feeMessage" class="control">
@@ -34,6 +55,8 @@
           :min="75"
           :max="200"
           :step="feeStep"
+          type="is-secondary"
+          tooltip-type="is-primary"
         />
       </b-field>
     </div>
@@ -41,9 +64,13 @@
       <b-field label="Bonded" class="control" :message="bondedMessage">
         <b-numberinput
           v-model="bonded"
+          type="is-secondary"
           :exponential="1"
           :min="1"
           :max="bondedMax"
+          expanded
+          controls-alignment="right"
+          controls-position="compact"
         />
       </b-field>
     </div>
@@ -51,16 +78,20 @@
       <b-field label="Stake" class="control" :message="stakeMessage">
         <b-numberinput
           v-model="stake"
+          type="is-secondary"
           :exponential="1"
           :step="1000"
           :min="1000"
           :max="stakeMax"
+          expanded
+          controls-alignment="right"
+          controls-position="compact"
         />
       </b-field>
     </div>
     <div class="panel-block">
       <b-button type="is-primary" class="is-fullwidth" @click="calculate"
-        >Calculate</b-button
+        >Calculate <span class="arrow">&#x21F1;</span></b-button
       >
     </div>
   </div>
@@ -72,13 +103,16 @@ import { mapActions, mapState } from 'vuex'
 export default {
   data() {
     return {
-      volume: 5,
+      volume: 30,
       fee: 150,
       bonded: 1,
       bondedMax: 2160000000,
       stake: 100000,
       stakeMax: 2160000000,
-      volumeMax: 100,
+      volumeStep: 1,
+      volumeMin: 1,
+      volumeMax: 500,
+      volumeUpperMax: 500000,
       feeStep: 5,
       feeTicks: true,
       advanced: false,
@@ -104,11 +138,15 @@ export default {
   watch: {
     advanced(newValue, oldValue) {
       if (newValue) {
-        this.volumeMax = 500000
+        this.volumeStep = 1
+        this.volumeMin = 500
+        this.volumeMax = 5000
         this.feeStep = 1
         this.feeTicks = false
       } else {
-        this.volumeMax = 100
+        this.volumeStep = 1
+        this.volumeMin = 1
+        this.volumeMax = 500
         this.feeStep = 5
         this.feeTicks = true
       }
@@ -144,3 +182,14 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.arrow {
+  display: inline-block;
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+</style>
