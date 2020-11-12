@@ -93,8 +93,29 @@ export default {
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    proxy: true,
+    // Used as fallback if no runtime config is provided
+    baseURL: 'http://localhost:3000',
+  },
+
+  proxy: {
+    '/api/': process.env.API_URL || 'https://api.stakeo.com',
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
+  publicRuntimeConfig: {
+    version: process.env.npm_package_version,
+    axios: {
+      browserBaseURL: process.env.BROWSER_BASE_URL,
+    },
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BASE_URL,
+    },
+  },
 }

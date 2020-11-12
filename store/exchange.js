@@ -19,7 +19,7 @@ export const mutations = {
 export const actions = {
   async getExchanges({ commit }, payload) {
     await this.$axios
-      .get(`https://api.stakeo.com/api/exchange/volume`, {
+      .get('/api/exchange/volume', {
         params: {
           currency: 'usd',
         },

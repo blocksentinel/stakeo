@@ -15,7 +15,7 @@ export const mutations = {
 export const actions = {
   async getFeeEstimate({ commit }, payload) {
     await this.$axios
-      .get(`https://api.stakeo.com/api/fee/estimate`, {
+      .get('/api/fee/estimate', {
         params: {
           ...payload,
         },
@@ -41,7 +41,7 @@ export const actions = {
   },
   async getSwitcheoStats({ commit }, payload) {
     await this.$axios
-      .get(`https://api.stakeo.com/api/stats/switcheo`, {
+      .get('/api/stats/switcheo', {
         params: {
           currency: 'usd',
         },
