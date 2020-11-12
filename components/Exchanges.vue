@@ -1,21 +1,28 @@
 <template>
-  <div class="panel is-secondary">
-    <div class="panel-heading is-size-6">30 Day Volume (USD)</div>
-    <div v-for="exchange in exchanges" :key="exchange.id" class="panel-block">
-      <ExchangeItem :exchange="exchange" />
+  <div class="columns">
+    <div class="column is-4">
+      <ExchangePanel title="Decentralized" :exchanges="dexs" />
+    </div>
+    <div class="column is-4">
+      <ExchangePanel title="Derivatives" :exchanges="ders" />
+    </div>
+    <div class="column is-4">
+      <ExchangePanel title="Centralized" :exchanges="cexs" />
     </div>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import ExchangeItem from '~/components/ExchangeItem'
+import ExchangePanel from '@/components/ExchangePanel'
 
 export default {
-  components: { ExchangeItem },
+  components: { ExchangePanel },
   computed: {
-    ...mapState('calculator', {
-      exchanges: 'exchanges',
+    ...mapState('exchange', {
+      cexs: 'cexs',
+      dexs: 'dexs',
+      ders: 'ders',
     }),
   },
 }
