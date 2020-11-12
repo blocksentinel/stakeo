@@ -1,18 +1,26 @@
 <template>
   <div>
     <div v-if="feeEstimate" class="columns">
-      <Card title="Daily">
-        {{ daily }}
-      </Card>
-      <Card title="Weekly">
-        {{ weekly }}
-      </Card>
-      <Card title="Monthly">
-        {{ monthly }}
-      </Card>
-      <Card title="Yearly">
-        {{ yearly }}
-      </Card>
+      <div class="column is-3">
+        <Card title="Daily">
+          {{ daily }}
+        </Card>
+      </div>
+      <div class="column is-3">
+        <Card title="Weekly">
+          {{ weekly }}
+        </Card>
+      </div>
+      <div class="column is-3">
+        <Card title="Monthly">
+          {{ monthly }}
+        </Card>
+      </div>
+      <div class="column is-3">
+        <Card title="Yearly">
+          {{ yearly }}
+        </Card>
+      </div>
     </div>
   </div>
 </template>
