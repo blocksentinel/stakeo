@@ -22,6 +22,13 @@
           >
             Demex
           </b-navbar-item>
+          <b-navbar-item
+            href="https://switcheo.org/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Tradescan
+          </b-navbar-item>
         </template>
       </b-navbar>
     </header>
