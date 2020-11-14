@@ -1,10 +1,7 @@
 <template>
   <div class="control">
-    <p>
-      <strong>{{ name }}</strong>
-      <br />
-      {{ volume }}
-    </p>
+    <strong class="is-block is-truncated">{{ name }}</strong>
+    <span class="is-block is-truncated">{{ volume }}</span>
   </div>
 </template>
 
