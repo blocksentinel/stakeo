@@ -45,7 +45,9 @@
           target="_blank"
           rel="noopener noreferer"
           >Block Sentinel</a
-        >.<br />
+        >.
+      </p>
+      <p>
         <small
           ><a
             href="https://www.coingecko.com/"
@@ -54,6 +56,9 @@
             ><span>Price data provided by CoinGecko</span></a
           ></small
         >
+      </p>
+      <p>
+        <small class="is-muted is-size-7">Stakeo v{{ version }}</small>
       </p>
     </footer>
   </div>
@@ -72,6 +77,11 @@ export default {
       getSwitcheoStatsTask: null,
       getExchangesTask: null,
     }
+  },
+  computed: {
+    version() {
+      return this.$config.version
+    },
   },
   mounted() {
     this.getSwitcheoStatsTask = setInterval(() => {
