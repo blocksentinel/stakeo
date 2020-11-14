@@ -1,22 +1,22 @@
 <template>
   <div>
-    <div v-if="feeEstimate" class="columns">
-      <div class="column is-3">
+    <div v-if="feeEstimate" class="columns is-multiline is-mobile">
+      <div class="column is-half-mobile is-half-tablet is-one-quarter-desktop">
         <Card title="Daily">
           {{ daily }}
         </Card>
       </div>
-      <div class="column is-3">
+      <div class="column is-half-mobile is-half-tablet is-one-quarter-desktop">
         <Card title="Weekly">
           {{ weekly }}
         </Card>
       </div>
-      <div class="column is-3">
+      <div class="column is-half-mobile is-half-tablet is-one-quarter-desktop">
         <Card title="Monthly">
           {{ monthly }}
         </Card>
       </div>
-      <div class="column is-3">
+      <div class="column is-half-mobile is-half-tablet is-one-quarter-desktop">
         <Card title="Yearly">
           {{ yearly }}
         </Card>
