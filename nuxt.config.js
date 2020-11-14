@@ -2,6 +2,11 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'server',
 
+  loading: {
+    color: '#e2fca4',
+    failedColor: '#fca6a6',
+  },
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'Switcheo TradeHub Staking Calculator',
