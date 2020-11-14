@@ -90,9 +90,17 @@
       </b-field>
     </div>
     <div class="panel-block">
-      <b-button type="is-primary" class="is-fullwidth" @click="calculate"
-        >Calculate <span class="arrow">&#x21F1;</span></b-button
-      >
+      <b-button type="is-primary" class="is-fullwidth" @click="calculate">
+        <div class="level">
+          Calculate
+          <img
+            src="../assets/switcheo-arrow-icon-light.svg"
+            width="20"
+            height="20"
+            class="ml-1"
+          />
+        </div>
+      </b-button>
     </div>
   </div>
 </template>
