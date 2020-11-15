@@ -91,15 +91,13 @@
     </div>
     <div class="panel-block">
       <b-button type="is-primary" class="is-fullwidth" @click="calculate">
-        <div class="level">
-          Calculate
-          <img
-            src="../assets/switcheo-arrow-icon-light.svg"
-            width="20"
-            height="20"
-            class="ml-1"
-          />
-        </div>
+        Calculate
+        <img
+          src="../assets/switcheo-arrow-icon-light.svg"
+          width="20"
+          height="20"
+          class="ml-1 arrow"
+        />
       </b-button>
     </div>
   </div>
@@ -193,11 +191,6 @@ export default {
 
 <style scoped>
 .arrow {
-  display: inline-block;
-  -moz-transform: scale(-1, 1);
-  -webkit-transform: scale(-1, 1);
-  -o-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
-  transform: scale(-1, 1);
+  vertical-align: text-bottom;
 }
 </style>
