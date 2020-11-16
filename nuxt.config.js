@@ -82,6 +82,11 @@ export default {
             style: 'currency',
             currency: 'USD',
           },
+          currencyToken: {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 4,
+          },
           volume: {
             style: 'currency',
             currency: 'USD',
@@ -91,6 +96,10 @@ export default {
           crypto: {
             minimumFractionDigits: 0,
             maximumFractionDigits: 0,
+          },
+          percent: {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
           },
         },
       },

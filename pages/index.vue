@@ -14,6 +14,7 @@
         <FeeEstimate />
       </div>
       <div class="column is-half-desktop is-hidden-mobile">
+        <Network />
         <Exchanges />
       </div>
     </div>
@@ -21,12 +22,13 @@
 </template>
 
 <script>
+import Network from '@/components/Network'
 import Calculator from '~/components/Calculator'
 import FeeEstimate from '~/components/FeeEstimate'
 import Exchanges from '~/components/Exchanges'
 
 export default {
   name: 'HomePage',
-  components: { Exchanges, FeeEstimate, Calculator },
+  components: { Network, Exchanges, FeeEstimate, Calculator },
 }
 </script>
