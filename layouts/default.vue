@@ -30,6 +30,13 @@
             >
               Switcheo Tradescan
             </b-navbar-item>
+            <b-navbar-item
+              href="https://switcheo.foundation/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Switcheo Foundation
+            </b-navbar-item>
           </b-navbar-dropdown>
         </template>
       </b-navbar>
