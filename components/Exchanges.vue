@@ -1,35 +1,20 @@
 <template>
-  <div class="columns">
-    <div class="column is-4">
-      <ExchangePanel
-        title="Decentralized"
-        tooltip="30 day volume for decentralized exchanges."
-        :exchanges="dexs"
-      />
+  <div class="panel is-light">
+    <div class="panel-heading is-size-6">
+      <span class="is-block is-truncated">30 Day Volume (USD)</span>
     </div>
-    <div class="column is-4">
-      <ExchangePanel
-        title="Derivatives"
-        tooltip="30 day volume for derivatives exchanges."
-        :exchanges="ders"
-      />
-    </div>
-    <div class="column is-4">
-      <ExchangePanel
-        title="Centralized"
-        tooltip="30 day volume for centralized exchanges."
-        :exchanges="cexs"
-      />
-    </div>
+    <ExchangeList title="Decentralized" :exchanges="dexs" />
+    <ExchangeList title="Derivatives" :exchanges="ders" />
+    <ExchangeList title="Centralized" :exchanges="cexs" />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import ExchangePanel from '@/components/ExchangePanel'
+import ExchangeList from '@/components/ExchangeList'
 
 export default {
-  components: { ExchangePanel },
+  components: { ExchangeList },
   computed: {
     ...mapState('exchange', {
       cexs: 'cexs',

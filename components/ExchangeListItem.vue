@@ -1,6 +1,6 @@
 <template>
   <div class="control">
-    <strong class="is-block is-truncated">{{ name }}</strong>
+    <span class="is-block is-truncated is-italic">{{ name }}</span>
     <span class="is-block is-truncated">{{ volume }}</span>
   </div>
 </template>
