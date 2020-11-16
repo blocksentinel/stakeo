@@ -9,11 +9,11 @@
       numbers at times. No warranty, not financial advice.
     </b-message>
     <div class="columns">
-      <div class="column is-6">
+      <div class="column is-half-desktop">
         <Calculator />
         <FeeEstimate />
       </div>
-      <div class="column is-6 is-hidden-mobile">
+      <div class="column is-half-desktop is-hidden-mobile">
         <Exchanges />
       </div>
     </div>
