@@ -1,7 +1,10 @@
 <template>
   <div class="control">
-    <span class="is-block is-truncated is-italic">{{ name }}</span>
-    <span class="is-block is-truncated">{{ volume }}</span>
+    <div class="mb-1">
+      <img :src="logo" class="logo mr-1" width="20" height="20" :alt="name" />
+      <span class="is-italic">{{ name }}</span>
+    </div>
+    <div class="is-truncated">{{ volume }}</div>
   </div>
 </template>
 
@@ -20,6 +23,19 @@ export default {
     volume() {
       return this.$n(this.exchange.volume, 'volume')
     },
+    logo() {
+      try {
+        return require(`@/assets/exchanges/${this.exchange.id}.webp`)
+      } catch (e) {
+        return require('@/assets/logo-light.svg')
+      }
+    },
   },
 }
 </script>
+
+<style scoped>
+.logo {
+  vertical-align: text-bottom;
+}
+</style>
