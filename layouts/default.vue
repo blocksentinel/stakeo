@@ -52,7 +52,7 @@
           target="_blank"
           rel="noopener noreferer"
           >Block Sentinel</a
-        >.
+        >
       </p>
       <p>
         <small
@@ -61,11 +61,14 @@
             target="_blank"
             rel="noopener noreferrer"
             ><span>Price data provided by CoinGecko</span></a
-          ></small
+          >
+          &middot;
+          <router-link :to="localePath({ name: 'disclaimer' })"
+            >Disclaimer</router-link
+          >
+          &middot;
+          <span class="is-muted is-size-7">v{{ version }}</span></small
         >
-      </p>
-      <p>
-        <small class="is-muted is-size-7">Stakeo v{{ version }}</small>
       </p>
     </footer>
   </div>
