@@ -75,15 +75,15 @@
 import { mapActions } from 'vuex'
 
 export default {
-  async fetch() {
-    await this.$store.dispatch('calculator/getSwitcheoStats')
-    await this.$store.dispatch('exchange/getExchanges')
-  },
   data() {
     return {
       getSwitcheoStatsTask: null,
       getExchangesTask: null,
     }
+  },
+  async fetch() {
+    await this.$store.dispatch('calculator/getSwitcheoStats')
+    await this.$store.dispatch('exchange/getExchanges')
   },
   computed: {
     version() {
