@@ -53,7 +53,7 @@ export default {
         return `+${this.$n(this.switcheoStats.change24H, 'percent')}%`
       }
 
-      return `-${this.$n(this.switcheoStats.change24H, 'percent')}%`
+      return `${this.$n(this.switcheoStats.change24H, 'percent')}%`
     },
     changeClasses() {
       const change = this.switcheoStats.change24H
