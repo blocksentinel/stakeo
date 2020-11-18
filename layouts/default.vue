@@ -8,14 +8,14 @@
           </b-navbar-item>
         </template>
         <template slot="end">
-          <b-navbar-dropdown label="Resources">
-            <b-navbar-item
-              href="https://dem.exchange/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Demex
-            </b-navbar-item>
+          <b-navbar-item
+            href="https://switcheo.org/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Switcheo Tradescan
+          </b-navbar-item>
+          <b-navbar-dropdown label="Switcheo Ecosystem">
             <b-navbar-item
               href="https://switcheo.exchange/"
               target="_blank"
@@ -24,11 +24,18 @@
               Switcheo Exchange
             </b-navbar-item>
             <b-navbar-item
-              href="https://switcheo.org/"
+              href="https://zilswap.io/"
               target="_blank"
               rel="noreferrer noopener"
             >
-              Switcheo Tradescan
+              ZilSwap
+            </b-navbar-item>
+            <b-navbar-item
+              href="https://dem.exchange/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Demex
             </b-navbar-item>
             <b-navbar-item
               href="https://switcheo.foundation/"
