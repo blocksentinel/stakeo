@@ -128,6 +128,12 @@ export default {
     ...mapState('calculator', {
       switcheoStats: 'switcheoStats',
     }),
+    stakeValue() {
+      return this.stake * this.switcheoStats.price
+    },
+    bondValue() {
+      return this.bonded * this.switcheoStats.price
+    },
     volumeMessage() {
       return `Monthly volume of ${this.$n(this.volume * 1000000, 'volume')}`
     },
@@ -135,10 +141,16 @@ export default {
       return `Average fee of ${this.formatFee(this.fee)}`
     },
     stakeMessage() {
-      return `Your total Switcheo stake is ${this.$n(this.stake, 'crypto')}`
+      return `Your total Switcheo stake is ${this.$n(
+        this.stake,
+        'crypto'
+      )} (${this.$n(this.stakeValue, 'currency')})`
     },
     bondedMessage() {
-      return `Total bonded Switcheo is ${this.$n(this.bonded, 'crypto')}`
+      return `Total bonded Switcheo is ${this.$n(
+        this.bonded,
+        'crypto'
+      )} (${this.$n(this.bondValue, 'currency')})`
     },
   },
   watch: {
