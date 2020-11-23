@@ -1,15 +1,19 @@
 <template>
-  <div class="panel-block is-flex-direction-column">
-    <div class="control mb-2">
-      <strong class="is-size-7">{{ title }}</strong>
-    </div>
-    <div class="columns is-multiline">
-      <div
-        v-for="exchange in exchanges"
-        :key="exchange.id"
-        class="column is-one-third-desktop is-half-tablet py-2"
-      >
-        <ExchangeListItem :exchange="exchange" />
+  <div>
+    <div class="panel is-light">
+      <p class="panel-heading is-size-6">
+        {{ title }} <small class="is-pulled-right">30 Day Volume (USD)</small>
+      </p>
+      <div class="panel-block p-0">
+        <div class="columns is-marginless is-multiline">
+          <div
+            v-for="exchange in exchanges"
+            :key="exchange.id"
+            class="column is-one-third-desktop is-half-tablet py-2"
+          >
+            <ExchangeListItem :exchange="exchange" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -33,8 +37,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import 'assets/scss/variables';
+
 .panel-block {
   border-bottom: none !important;
+}
+
+.panel-heading > small {
+  font-weight: $weight-light;
 }
 </style>
