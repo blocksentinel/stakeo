@@ -16,3 +16,8 @@ body {
 .is-muted {
   color: #6c757d!important;
 }
+
+.button, .input, .navbar-dropdown {
+  border-radius: 0;
+}
+
