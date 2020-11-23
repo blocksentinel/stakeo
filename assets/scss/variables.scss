@@ -1,0 +1,38 @@
+@import '~bulma/sass/utilities/_all';
+
+$primary: #073c50;
+$primary-light: findLightColor($primary);
+$primary-dark: findDarkColor($primary);
+$primary-invert: findColorInvert($primary);
+
+$secondary: #e2fca4;
+$secondary-light: findLightColor($secondary);
+$secondary-dark: findDarkColor($secondary);
+$secondary-invert: findColorInvert($secondary);
+
+$warning: #fceba4;
+$warning-light: findLightColor($warning);
+$warning-dark: findDarkColor($warning);
+$warning-invert: findColorInvert($warning);
+
+$addColors: (
+  "primary": (
+    $primary,
+    $primary-invert,
+    $primary-light,
+    $primary-dark,
+  ),
+  "secondary": (
+    $secondary,
+    $secondary-invert,
+    $secondary-light,
+    $secondary-dark,
+  ),
+  "warning": (
+    $warning,
+    $warning-invert,
+    $warning-light,
+    $warning-dark,
+  ),
+);
+$colors: map-merge($colors, $addColors);

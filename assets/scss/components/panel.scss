@@ -1,0 +1,15 @@
+@import "~bulma/sass/components/panel";
+
+$panel-radius: 0;
+$panel-heading-weight: $weight-semibold;
+
+@each $name, $components in $panel-colors {
+  $color: nth($components, 1);
+  .panel {
+    &.is-#{$name} {
+      .panel-heading {
+        border-left: 4px findDarkColor($color) solid;
+      }
+    }
+  }
+}
