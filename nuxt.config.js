@@ -97,6 +97,12 @@ export default {
             minimumFractionDigits: 0,
             maximumFractionDigits: 0,
           },
+          compact: {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 1,
+            notation: 'compact',
+            compactDisplay: 'short',
+          },
           percent: {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,

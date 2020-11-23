@@ -1,12 +1,12 @@
 <template>
-  <section class="section">
+  <section class="section pt-5">
+    <Network />
     <div class="columns">
       <div class="column is-half-desktop">
         <Calculator />
         <FeeEstimate />
       </div>
       <div class="column is-half-desktop is-hidden-mobile">
-        <Network />
         <Exchanges />
       </div>
     </div>

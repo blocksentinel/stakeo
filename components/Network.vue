@@ -1,27 +1,27 @@
 <template>
-  <div class="panel is-secondary">
-    <div class="panel-heading is-size-6">
-      <span class="is-block is-truncated">TradeHub Stats</span>
+  <div class="level is-mobile">
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">SWTH Price</p>
+        <p class="title is-size-6 is-size-5-tablet">
+          {{ price }} <small :class="changeClasses">{{ change24H }}</small>
+        </p>
+      </div>
     </div>
-    <div class="panel-block">
-      <div class="columns has-text-centered control">
-        <div class="column is-one-third">
-          <strong class="is-block">SWTH Price</strong>
-          <span class="is-block"
-            >{{ price }}
-            <span :class="changeClasses">{{ change24H }}</span></span
-          >
-        </div>
-        <div class="column is-one-third">
-          <strong class="is-block">Bonded</strong>
-          <span class="is-block">{{ bondedSupply }}</span>
-          <span class="is-block">of</span>
-          <span class="is-block">{{ totalSupply }}</span>
-        </div>
-        <div class="column is-one-third">
-          <strong class="is-block">24 Hour Volume</strong>
-          <span class="is-block">{{ vol24H }}</span>
-        </div>
+    <div class="level-item has-text-centered is-hidden-mobile">
+      <div>
+        <p class="heading">Bonded</p>
+        <p class="title is-size-6 is-size-5-tablet">
+          {{ supply }}
+        </p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">24 Hour Volume</p>
+        <p class="title is-size-6 is-size-5-tablet">
+          {{ vol24H }}
+        </p>
       </div>
     </div>
   </div>
@@ -38,14 +38,12 @@ export default {
     price() {
       return this.$n(this.switcheoStats.price, 'currencyToken')
     },
-    bondedSupply() {
-      return this.$n(this.switcheoStats.bondedSupply, 'crypto')
-    },
-    totalSupply() {
-      return this.$n(this.switcheoStats.totalSupply, 'crypto')
-    },
-    bondedPercent() {
-      return this.$n(this.switcheoStats.bondedPercent, 'percent')
+    supply() {
+      return (
+        this.$n(this.switcheoStats.bondedSupply, 'compact') +
+        ' / ' +
+        this.$n(this.switcheoStats.totalSupply, 'compact')
+      )
     },
     change24H() {
       const change = this.switcheoStats.change24H
