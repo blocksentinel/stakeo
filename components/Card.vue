@@ -6,7 +6,7 @@
       </p>
     </header>
     <div class="card-content p-0 pb-3">
-      <div class="content is-size-6 has-text-centered">
+      <div class="content has-text-weight-semibold is-size-6 has-text-centered">
         <slot />
       </div>
     </div>
