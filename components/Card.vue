@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div :class="cardClasses">
     <header v-if="title" class="card-header">
       <p class="card-header-title is-justify-content-center pb-0">
         {{ title }}
@@ -20,6 +20,21 @@ export default {
       type: String,
       required: true,
     },
+    type: {
+      type: String,
+      required: false,
+      default: '',
+    },
+  },
+  computed: {
+    cardClasses() {
+      const classes = ['card']
+      if (this.type !== '') {
+        classes.push(this.type)
+      }
+
+      return classes
+    },
   },
 }
 </script>
@@ -29,7 +44,14 @@ export default {
 
 .card {
   color: rgba(0, 0, 0, 0.7);
-  background-color: $secondary;
+
+  &.is-secondary {
+    background-color: $secondary;
+  }
+
+  &.is-transparent {
+    box-shadow: none;
+  }
 
   .card-header-title {
     font-size: 11px;
