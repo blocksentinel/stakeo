@@ -1,9 +1,23 @@
 <template>
   <div>
     <div class="panel is-light">
-      <p class="panel-heading is-size-6">
-        {{ title }} <small class="is-pulled-right">30 Day Volume (USD)</small>
-      </p>
+      <div class="panel-heading is-size-6">
+        <span
+          >{{ title }}
+          <b-tooltip
+            v-if="helpText"
+            :label="helpText"
+            type="is-primary"
+            size="is-large"
+            position="is-right"
+            multilined
+            ><font-awesome-icon
+              icon="question-circle"
+              size="sm"
+              class="ml-1" /></b-tooltip
+        ></span>
+        <small class="is-pulled-right">30 Day Volume (USD)</small>
+      </div>
       <div class="panel-block p-0">
         <div class="columns is-marginless is-multiline">
           <div
@@ -28,6 +42,10 @@ export default {
     title: {
       type: String,
       required: true,
+    },
+    helpText: {
+      type: String,
+      default: '',
     },
     exchanges: {
       type: Array,

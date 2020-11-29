@@ -1,7 +1,18 @@
 <template>
   <div class="panel is-primary">
-    <p class="panel-heading is-size-6">
-      Staking Calculator
+    <div class="panel-heading is-size-6">
+      <span
+        >Staking Calculator
+        <b-tooltip
+          label="Calculate your staking returns based on projected Switcheo TradeHub volume. Block subsidies are currently not included in the calculation."
+          type="is-secondary"
+          size="is-large"
+          multilined
+          ><font-awesome-icon
+            icon="question-circle"
+            size="sm"
+            class="ml-1" /></b-tooltip
+      ></span>
       <b-switch
         v-model="advanced"
         type="is-secondary"
@@ -10,7 +21,7 @@
         left-label
         >Moon Mode</b-switch
       >
-    </p>
+    </div>
     <div class="panel-block is-flex-direction-column">
       <b-field
         label="TradeHub Volume (USD)"

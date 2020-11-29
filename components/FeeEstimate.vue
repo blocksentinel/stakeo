@@ -32,7 +32,16 @@
         </div>
       </div>
       <hr />
-      <h4 class="has-text-weight-semibold mb-2">Projected SWTH Price:</h4>
+      <h4 class="has-text-weight-semibold mb-2">
+        Potential SWTH Price
+        <b-tooltip
+          label="This table depicts the potential price of a single SWTH token if the annual return rate were to reflect the percentage in each column."
+          type="is-primary"
+          size="is-large"
+          multilined
+          ><font-awesome-icon icon="question-circle" size="sm" class="ml-1"
+        /></b-tooltip>
+      </h4>
       <div class="columns is-multiline is-mobile mb-0">
         <div
           v-for="item in tokenPrices"
