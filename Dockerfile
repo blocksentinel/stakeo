@@ -1,10 +1,10 @@
-FROM node:12.18-alpine as base
+FROM node:14.15-alpine as base
 WORKDIR /app
 ENV NUXT_HOST 0.0.0.0
 ENV NUXT_PORT 3000
 EXPOSE 3000
 
-FROM node:12.18-buster as build
+FROM node:14.15-buster as build
 WORKDIR /src
 ENV DISABLE_OPENCOLLECTIVE 1
 COPY package.json package-lock.json /src/
