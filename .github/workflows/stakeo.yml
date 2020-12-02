@@ -14,7 +14,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: stakeo-ui
+  IMAGE_NAME: stakeo
   DOCKER_FILE: Dockerfile
 
 jobs:
