@@ -9,8 +9,8 @@ features.
 
 ## Using the issue tracker
 
-The issue tracker is the preferred channel for [bug reports](#bugs),
-[features requests](#features) and [submitting pull requests](#pull-requests), but please respect the following
+The issue tracker is the preferred channel for [bug reports](#bug-reports),
+[features requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following
 restrictions:
 
 * Please **do not** use the issue tracker for personal support requests.

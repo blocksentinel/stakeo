@@ -30,8 +30,8 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 Anyone and everyone is welcome to contribute. Please take a moment to
 review the [guidelines for contributing](CONTRIBUTING.md).
 
-* [Bug reports](CONTRIBUTING.md#bugs)
-* [Feature requests](CONTRIBUTING.md#features)
+* [Bug reports](CONTRIBUTING.md#bug-reports)
+* [Feature requests](CONTRIBUTING.md#feature-requests)
 * [Pull requests](CONTRIBUTING.md#pull-requests)
 
 ## License
