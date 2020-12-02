@@ -2,7 +2,7 @@
   <div class="level is-mobile">
     <div class="level-item has-text-centered">
       <div>
-        <p class="heading">SWTH Price</p>
+        <p class="heading">{{ $t('network.priceHeading') }}</p>
         <p class="title is-size-6 is-size-5-tablet">
           {{ price }} <small :class="changeClasses">{{ change24H }}</small>
         </p>
@@ -10,7 +10,7 @@
     </div>
     <div class="level-item has-text-centered is-hidden-mobile">
       <div>
-        <p class="heading">Bonded</p>
+        <p class="heading">{{ $t('network.bondHeading') }}</p>
         <p class="title is-size-6 is-size-5-tablet">
           {{ supply }}
         </p>
@@ -18,7 +18,7 @@
     </div>
     <div class="level-item has-text-centered">
       <div>
-        <p class="heading">24 Hour Volume</p>
+        <p class="heading">{{ $t('network.volume24Hour') }}</p>
         <p class="title is-size-6 is-size-5-tablet">
           {{ vol24H }}
         </p>

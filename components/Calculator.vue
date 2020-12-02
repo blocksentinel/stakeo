@@ -2,9 +2,9 @@
   <div class="panel is-primary">
     <div class="panel-heading is-size-6">
       <span
-        >Staking Calculator
+        >{{ $t('calculator.heading') }}
         <b-tooltip
-          label="Calculate your staking returns based on projected Switcheo TradeHub volume. Block subsidies are currently not included in the calculation."
+          :label="$t('calculator.headingTooltip')"
           type="is-secondary"
           size="is-large"
           multilined
@@ -19,12 +19,12 @@
         size="is-small"
         class="is-pulled-right mr-0"
         left-label
-        >Moon Mode</b-switch
+        >{{ $t('calculator.advancedMode') }}</b-switch
       >
     </div>
     <div class="panel-block is-flex-direction-column">
       <b-field
-        label="TradeHub Volume (USD)"
+        :label="$t('calculator.volumeControlLabel')"
         :message="volumeMessage"
         class="control"
       >
@@ -58,7 +58,11 @@
       </div>
     </div>
     <div class="panel-block">
-      <b-field label="Trading Fees" :message="feeMessage" class="control">
+      <b-field
+        :label="$t('calculator.feeControlLabel')"
+        :message="feeMessage"
+        class="control"
+      >
         <b-slider
           v-model="fee"
           :custom-formatter="formatFee"
@@ -72,7 +76,11 @@
       </b-field>
     </div>
     <div class="panel-block">
-      <b-field label="Bonded" class="control" :message="bondedMessage">
+      <b-field
+        :label="$t('calculator.bondControlLabel')"
+        class="control"
+        :message="bondedMessage"
+      >
         <b-numberinput
           v-model="bonded"
           type="is-secondary"
@@ -86,7 +94,11 @@
       </b-field>
     </div>
     <div class="panel-block">
-      <b-field label="Stake" class="control" :message="stakeMessage">
+      <b-field
+        :label="$t('calculator.stakeControlLabel')"
+        class="control"
+        :message="stakeMessage"
+      >
         <b-numberinput
           v-model="stake"
           type="is-secondary"
@@ -102,7 +114,7 @@
     </div>
     <div class="panel-block">
       <b-button type="is-primary" class="is-fullwidth" @click="calculate">
-        Calculate
+        {{ $t('calculator.button') }}
         <img
           src="../assets/switcheo-arrow-icon-light.svg"
           width="20"
@@ -146,22 +158,26 @@ export default {
       return this.bonded * this.switcheoStats.price
     },
     volumeMessage() {
-      return `Monthly volume of ${this.$n(this.volume * 1000000, 'volume')}`
+      return this.$t('calculator.volumeMessage', {
+        amount: this.$n(this.volume * 1000000, 'volume'),
+      })
     },
     feeMessage() {
-      return `Average fee of ${this.formatFee(this.fee)}`
+      return this.$t('calculator.feeMessage', {
+        amount: this.formatFee(this.fee),
+      })
     },
     stakeMessage() {
-      return `Your total Switcheo stake is ${this.$n(
-        this.stake,
-        'crypto'
-      )} (${this.$n(this.stakeValue, 'currency')})`
+      return this.$t('calculator.stakeMessage', {
+        amount: this.$n(this.stake, 'crypto'),
+        value: this.$n(this.stakeValue, 'currency'),
+      })
     },
     bondedMessage() {
-      return `Total bonded Switcheo is ${this.$n(
-        this.bonded,
-        'crypto'
-      )} (${this.$n(this.bondValue, 'currency')})`
+      return this.$t('calculator.bondMessage', {
+        amount: this.$n(this.bonded, 'crypto'),
+        value: this.$n(this.bondValue, 'currency'),
+      })
     },
   },
   watch: {
