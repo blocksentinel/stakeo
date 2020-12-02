@@ -1,6 +1,6 @@
 # Stakeo
 
-> Analytics and tools for Switcheo TradeHub using NuxtJS and Buefy.
+> Blockchain analytics and staking tools for Switcheo TradeHub using NuxtJS and Buefy.
 
 ![GitHub](https://img.shields.io/github/license/blocksentinel/stakeo)
 
