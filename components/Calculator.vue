@@ -216,10 +216,10 @@ export default {
     },
     formatVolume(val) {
       if (val > 999) {
-        return `${val / 1000} billion`
+        return this.$t('calculator.volumeCompactBillion', { value: val / 1000 })
       }
 
-      return `${val} million`
+      return this.$t('calculator.volumeCompactMillion', { value: val })
     },
     formatFee(val) {
       return `${val / 1000}%`

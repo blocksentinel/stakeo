@@ -14,6 +14,8 @@ export default {
     stakeControlLabel: 'Stake',
     stakeMessage: 'Your total @:vendor.swthTicker stake is {amount} ({value})',
     button: 'Calculate',
+    volumeCompactMillion: '{value} million',
+    volumeCompactBillion: '{value} billion',
   },
   estimate: {
     daily: 'Daily',
