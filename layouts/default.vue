@@ -104,6 +104,17 @@ export default {
     await this.$store.dispatch('calculator/getSwitcheoStats')
     await this.$store.dispatch('exchange/getExchanges')
   },
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'generator',
+          name: 'generator',
+          content: `${this.$config.appName} ${this.$config.appVersion}`,
+        },
+      ],
+    }
+  },
   computed: {
     version() {
       return this.$config.version
@@ -132,17 +143,6 @@ export default {
     ...mapActions('exchange', {
       getExchanges: 'getExchanges',
     }),
-  },
-  head() {
-    return {
-      meta: [
-        {
-          hid: 'generator',
-          name: 'generator',
-          content: `${process.env.npm_package_name} ${this.$config.version}`,
-        },
-      ],
-    }
   },
 }
 </script>

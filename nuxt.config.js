@@ -139,7 +139,8 @@ export default {
   build: {},
 
   publicRuntimeConfig: {
-    version: process.env.npm_package_version,
+    appName: process.env.npm_package_name,
+    appVersion: process.env.npm_package_version,
     axios: {
       browserBaseURL: process.env.BROWSER_BASE_URL,
     },
