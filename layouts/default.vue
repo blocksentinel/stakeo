@@ -15,7 +15,7 @@
           <b-navbar-item
             href="https://switcheo.org/"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener"
           >
             {{ $t('vendor.switcheoTradescan') }}
           </b-navbar-item>
@@ -23,28 +23,28 @@
             <b-navbar-item
               href="https://switcheo.exchange/"
               target="_blank"
-              rel="noreferrer noopener"
+              rel="noopener"
             >
               {{ $t('vendor.switcheoExchange') }}
             </b-navbar-item>
             <b-navbar-item
               href="https://zilswap.io/"
               target="_blank"
-              rel="noreferrer noopener"
+              rel="noopener"
             >
               {{ $t('vendor.zilSwap') }}
             </b-navbar-item>
             <b-navbar-item
               href="https://dem.exchange/"
               target="_blank"
-              rel="noreferrer noopener"
+              rel="noopener"
             >
               {{ $t('vendor.demex') }}
             </b-navbar-item>
             <b-navbar-item
               href="https://switcheo.foundation/"
               target="_blank"
-              rel="noreferrer noopener"
+              rel="noopener"
             >
               {{ $t('vendor.switcheoFoundation') }}
             </b-navbar-item>
