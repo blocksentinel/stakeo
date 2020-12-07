@@ -4,45 +4,49 @@
       <b-navbar type="is-primary" wrapper-class="container">
         <template slot="brand">
           <b-navbar-item tag="router-link" :to="localePath({ path: '/' })">
-            <img src="../assets/logo-light.svg" alt="Stakeo" width="32" />
+            <img
+              src="../assets/logo-light.svg"
+              :alt="$t('stakeo')"
+              width="32"
+            />
           </b-navbar-item>
         </template>
         <template slot="end">
           <b-navbar-item
             href="https://switcheo.org/"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener"
           >
-            Switcheo Tradescan
+            {{ $t('vendor.switcheoTradescan') }}
           </b-navbar-item>
-          <b-navbar-dropdown label="Switcheo Ecosystem">
+          <b-navbar-dropdown :label="$t('vendor.switcheoEcosystem')">
             <b-navbar-item
               href="https://switcheo.exchange/"
               target="_blank"
-              rel="noreferrer noopener"
+              rel="noopener"
             >
-              Switcheo Exchange
+              {{ $t('vendor.switcheoExchange') }}
             </b-navbar-item>
             <b-navbar-item
               href="https://zilswap.io/"
               target="_blank"
-              rel="noreferrer noopener"
+              rel="noopener"
             >
-              ZilSwap
+              {{ $t('vendor.zilSwap') }}
             </b-navbar-item>
             <b-navbar-item
               href="https://dem.exchange/"
               target="_blank"
-              rel="noreferrer noopener"
+              rel="noopener"
             >
-              Demex
+              {{ $t('vendor.demex') }}
             </b-navbar-item>
             <b-navbar-item
               href="https://switcheo.foundation/"
               target="_blank"
-              rel="noreferrer noopener"
+              rel="noopener"
             >
-              Switcheo Foundation
+              {{ $t('vendor.switcheoFoundation') }}
             </b-navbar-item>
           </b-navbar-dropdown>
         </template>
@@ -53,13 +57,13 @@
     </div>
     <footer class="footer has-text-centered">
       <p>
-        Made for the Switcheo Community by
-        <a
-          href="https://blocksentinel.dev/"
-          target="_blank"
-          rel="noopener noreferer"
-          >Block Sentinel</a
-        >
+        <i18n path="madeByStatement">
+          <span slot="company">
+            <a target="_blank" rel="noopener" href="https://blocksentinel.dev/">
+              {{ $t('vendor.blockSentinel') }}
+            </a>
+          </span>
+        </i18n>
       </p>
       <p>
         <small
@@ -67,14 +71,19 @@
             href="https://www.coingecko.com/"
             target="_blank"
             rel="noopener noreferrer"
-            ><span>Price data provided by CoinGecko</span></a
+            ><span>{{ $t('priceStatement') }}</span></a
           >
           &middot;
-          <router-link :to="localePath({ name: 'disclaimer' })"
-            >Disclaimer</router-link
+          <a
+            href="https://github.com/blocksentinel/stakeo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span>{{ $t('vendor.gitHub') }}</span></a
           >
           &middot;
-          <span class="is-muted is-size-7">v{{ version }}</span></small
+          <router-link :to="localePath({ name: 'disclaimer' })">
+            {{ $t('disclaimer') }}
+          </router-link></small
         >
       </p>
     </footer>
@@ -94,6 +103,17 @@ export default {
   async fetch() {
     await this.$store.dispatch('calculator/getSwitcheoStats')
     await this.$store.dispatch('exchange/getExchanges')
+  },
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'generator',
+          name: 'generator',
+          content: `${this.$config.appName} ${this.$config.appVersion}`,
+        },
+      ],
+    }
   },
   computed: {
     version() {

@@ -1,20 +1,20 @@
 <template>
   <div>
     <ExchangeList
-      title="Decentralized"
-      help-text="A decentralized exchange (DEX) is a cryptocurrency exchange which operates in a decentralized way, i.e., without a central authority. Decentralized exchanges allow peer-to-peer trading of cryptocurrencies."
+      :title="$t('exchange.decentralizedHeading')"
+      :help-text="$t('exchange.decentralizedHeadingTooltip')"
       :exchanges="dexs"
       class="mb-4"
     />
     <ExchangeList
-      title="Derivatives"
-      help-text="Derivatives are tradable securities or contracts that derive their value from an underlying asset. In the case of cryptocurrency derivatives, the underlying asset is, in most cases, Bitcoin (BTC), or other top cryptocurrencies."
+      :title="$t('exchange.derivativesHeading')"
+      :help-text="$t('exchange.derivativesHeadingTooltip')"
       :exchanges="ders"
       class="mb-4"
     />
     <ExchangeList
-      title="Centralized"
-      help-text="A centralized exchange (CEX) is a cryptocurrency exchange which operates more like a traditional bank, acting as custodian of your funds. Centralized exchanges generally follow know your customer (KYC) and Anti-Money Laundering (AML) regulations."
+      :title="$t('exchange.centralizedHeading')"
+      :help-text="$t('exchange.centralizedHeadingTooltip')"
       :exchanges="cexs"
     />
   </div>

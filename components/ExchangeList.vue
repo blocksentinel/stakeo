@@ -16,7 +16,9 @@
               size="sm"
               class="ml-1" /></b-tooltip
         ></span>
-        <small class="is-pulled-right">30 Day Volume (USD)</small>
+        <small class="is-pulled-right">
+          {{ $t('exchange.volume30DayLabel') }}
+        </small>
       </div>
       <div class="panel-block p-0">
         <div class="columns is-marginless is-multiline">

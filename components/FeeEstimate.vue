@@ -5,37 +5,37 @@
         <div
           class="column is-half-mobile is-half-tablet is-one-quarter-desktop"
         >
-          <Card title="Daily" type="is-secondary">
+          <Card :title="$t('estimate.daily')" type="is-secondary">
             {{ daily }}
           </Card>
         </div>
         <div
           class="column is-half-mobile is-half-tablet is-one-quarter-desktop"
         >
-          <Card title="Weekly" type="is-secondary">
+          <Card :title="$t('estimate.weekly')" type="is-secondary">
             {{ weekly }}
           </Card>
         </div>
         <div
           class="column is-half-mobile is-half-tablet is-one-quarter-desktop"
         >
-          <Card title="Monthly" type="is-secondary">
+          <Card :title="$t('estimate.monthly')" type="is-secondary">
             {{ monthly }}
           </Card>
         </div>
         <div
           class="column is-half-mobile is-half-tablet is-one-quarter-desktop"
         >
-          <Card title="Yearly" type="is-secondary">
+          <Card :title="$t('estimate.yearly')" type="is-secondary">
             {{ yearly }}
           </Card>
         </div>
       </div>
       <hr />
       <h4 class="has-text-weight-semibold mb-2">
-        Potential SWTH Price
+        {{ $t('estimate.potentialPriceHeading') }}
         <b-tooltip
-          label="This table depicts the potential price of a single SWTH token if the annual return rate were to reflect the percentage in each column."
+          :label="$t('estimate.potentialPriceHeadingTooltip')"
           type="is-primary"
           size="is-large"
           multilined
@@ -55,10 +55,10 @@
       </div>
       <div class="has-text-centered is-muted">
         <small class="is-size-7"
-          >Estimated based on annual return rates.
-          <router-link :to="localePath({ name: 'disclaimer' })"
-            >Disclaimer</router-link
-          ></small
+          >{{ $t('estimate.rateMessage') }}
+          <router-link :to="localePath({ name: 'disclaimer' })">
+            {{ $t('disclaimer') }}
+          </router-link></small
         >
       </div>
     </div>
