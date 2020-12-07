@@ -4,7 +4,7 @@
 
 ![GitHub](https://img.shields.io/github/license/blocksentinel/stakeo)
 
-You can access it at https://www.stakeo.com.
+You can access it at https://stakeo.com.
 
 ## Build Setup
 
