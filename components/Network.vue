@@ -64,15 +64,44 @@ export default {
     vol24H() {
       return this.$n(this.switcheoStats.vol24H, 'volume')
     },
+    activeProposalCount() {
+      return this.switcheoStats.activeProposalCount
+    },
+  },
+  watch: {
+    activeProposalCount: {
+      handler(value) {
+        if (!process.client) {
+          return
+        }
+
+        if (value < 1) {
+          return
+        }
+
+        this.$buefy.toast.open({
+          duration: 5000,
+          message: this.$t('network.proposalMessage'),
+          type: 'is-secondary',
+          position: 'is-bottom',
+        })
+      },
+      immediate: true,
+    },
   },
 }
 </script>
 
-<style scoped>
+<style>
 .change.change-positive {
   color: #338f2b;
 }
+
 .change.change-negative {
   color: #8e2a2c;
+}
+
+.notices .toast {
+  border-radius: 0;
 }
 </style>

@@ -1,6 +1,6 @@
 {
   "name": "stakeo",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -20,17 +20,17 @@
     "@nuxtjs/axios": "^5.12.3",
     "@nuxtjs/proxy": "^2.0.1",
     "core-js": "^3.8.1",
-    "nuxt": "^2.14.9",
+    "nuxt": "^2.14.10",
     "nuxt-buefy": "^0.4.3",
     "nuxt-i18n": "^6.15.4"
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",
-    "@nuxt/types": "^2.14.9",
+    "@nuxt/types": "^2.14.10",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.1",
     "@vue/test-utils": "^1.1.0",
-    "ava": "^3.13.0",
+    "ava": "^3.14.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "cross-env": "^7.0.3",

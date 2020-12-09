@@ -136,7 +136,13 @@ export default {
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    hotMiddleware: {
+      client: {
+        overlay: false,
+      },
+    },
+  },
 
   publicRuntimeConfig: {
     appName: process.env.npm_package_name,
