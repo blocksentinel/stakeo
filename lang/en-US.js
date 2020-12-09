@@ -43,6 +43,8 @@ export default {
     priceHeading: '@:vendor.swthTicker Price',
     bondHeading: 'Bonded',
     volume24Hour: '24 Hour Volume',
+    proposalMessage:
+      'A TradeHub Improvement Proposal (TIP) is currently being voted on. <a href="https://switcheo.org/governance?net=main" target="_blank" rel="noopener">Place your vote now!</a>',
   },
   vendor: {
     blockSentinel: 'Block Sentinel',
