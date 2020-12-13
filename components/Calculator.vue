@@ -148,14 +148,14 @@ export default {
     }
   },
   computed: {
-    ...mapState('calculator', {
-      switcheoStats: 'switcheoStats',
+    ...mapState('stats', {
+      networkStats: 'networkStats',
     }),
     stakeValue() {
-      return this.stake * this.switcheoStats.price
+      return this.stake * this.networkStats.price
     },
     bondValue() {
-      return this.bonded * this.switcheoStats.price
+      return this.bonded * this.networkStats.price
     },
     volumeMessage() {
       return this.$t('calculator.volumeMessage', {
@@ -199,7 +199,7 @@ export default {
   },
   mounted() {
     if (this.bonded <= 1) {
-      this.bonded = Math.ceil(this.switcheoStats.bondedSupply)
+      this.bonded = Math.ceil(this.networkStats.bondedSupply)
     }
   },
   methods: {

@@ -1,23 +1,23 @@
 export const state = () => ({
-  feeEstimate: null,
+  networkStats: null,
 })
 
 export const mutations = {
-  setFeeEstimate(state, value) {
-    state.feeEstimate = value
+  setNetworkStats(state, value) {
+    state.networkStats = value
   },
 }
 
 export const actions = {
-  async getFeeEstimate({ commit }, payload) {
+  async getNetworkStats({ commit }, payload) {
     await this.$axios
-      .get('/api/fee/estimate', {
+      .get('/api/stats/network', {
         params: {
-          ...payload,
+          currency: 'usd',
         },
       })
       .then((response) => {
-        commit('setFeeEstimate', response.data)
+        commit('setNetworkStats', response.data)
       })
       .catch((error) => {
         // let errors = null

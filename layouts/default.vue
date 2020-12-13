@@ -17,12 +17,12 @@ export default {
   components: { AppFooter, AppHeader },
   data() {
     return {
-      getSwitcheoStatsTask: null,
+      getNetworkStatsTask: null,
       getExchangesTask: null,
     }
   },
   async fetch() {
-    await this.$store.dispatch('calculator/getSwitcheoStats')
+    await this.$store.dispatch('stats/getNetworkStats')
     await this.$store.dispatch('exchange/getExchanges')
   },
   head() {
@@ -42,24 +42,24 @@ export default {
     },
   },
   mounted() {
-    this.getSwitcheoStatsTask = setInterval(() => {
-      this.getSwitcheoStats()
+    this.getNetworkStatsTask = setInterval(() => {
+      this.getNetworkStats()
     }, 30000)
     this.getExchangesTask = setInterval(() => {
       this.getExchanges()
     }, 60000)
   },
   beforeDestroy() {
-    if (this.getSwitcheoStatsTask !== null) {
-      clearInterval(this.getSwitcheoStatsTask)
+    if (this.getNetworkStatsTask !== null) {
+      clearInterval(this.getNetworkStatsTask)
     }
     if (this.getExchangesTask !== null) {
       clearInterval(this.getExchangesTask)
     }
   },
   methods: {
-    ...mapActions('calculator', {
-      getSwitcheoStats: 'getSwitcheoStats',
+    ...mapActions('stats', {
+      getNetworkStats: 'getNetworkStats',
     }),
     ...mapActions('exchange', {
       getExchanges: 'getExchanges',

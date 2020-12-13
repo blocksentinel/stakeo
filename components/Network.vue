@@ -39,29 +39,29 @@ import { mapState } from 'vuex'
 
 export default {
   computed: {
-    ...mapState('calculator', {
-      switcheoStats: 'switcheoStats',
+    ...mapState('stats', {
+      networkStats: 'networkStats',
     }),
     price() {
-      return this.$n(this.switcheoStats.price, 'currencyToken')
+      return this.$n(this.networkStats.price, 'currencyToken')
     },
     supply() {
       return (
-        this.$n(this.switcheoStats.bondedSupply, 'compact') +
+        this.$n(this.networkStats.bondedSupply, 'compact') +
         ' / ' +
-        this.$n(this.switcheoStats.totalSupply, 'compact')
+        this.$n(this.networkStats.totalSupply, 'compact')
       )
     },
     change24H() {
-      const change = this.switcheoStats.change24H
+      const change = this.networkStats.change24H
       if (change >= 0) {
-        return `+${this.$n(this.switcheoStats.change24H, 'percent')}%`
+        return `+${this.$n(this.networkStats.change24H, 'percent')}%`
       }
 
-      return `${this.$n(this.switcheoStats.change24H, 'percent')}%`
+      return `${this.$n(this.networkStats.change24H, 'percent')}%`
     },
     changeClasses() {
-      const change = this.switcheoStats.change24H
+      const change = this.networkStats.change24H
       if (change >= 0) {
         return ['change', 'change-positive']
       }
@@ -69,13 +69,13 @@ export default {
       return ['change', 'change-negative']
     },
     showRocket() {
-      return this.switcheoStats.change24H >= 10
+      return this.networkStats.change24H >= 10
     },
     vol24H() {
-      return this.$n(this.switcheoStats.vol24H, 'volume')
+      return this.$n(this.networkStats.vol24H, 'volume')
     },
     activeProposalCount() {
-      return this.switcheoStats.activeProposalCount
+      return this.networkStats.activeProposalCount
     },
   },
   watch: {
