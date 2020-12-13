@@ -9,7 +9,7 @@
           size="is-large"
           multilined
           ><font-awesome-icon
-            icon="question-circle"
+            :icon="['fad', 'question-circle']"
             size="sm"
             class="ml-1" /></b-tooltip
       ></span>

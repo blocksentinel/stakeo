@@ -72,7 +72,7 @@ export default {
 
   buefy: {
     css: false,
-    defaultIconPack: 'fas',
+    defaultIconPack: 'fad',
     defaultIconComponent: 'font-awesome-icon',
   },
 

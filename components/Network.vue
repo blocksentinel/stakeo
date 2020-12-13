@@ -4,7 +4,14 @@
       <div>
         <p class="heading">{{ $t('network.priceHeading') }}</p>
         <p class="title is-size-6 is-size-5-tablet">
-          {{ price }} <small :class="changeClasses">{{ change24H }}</small>
+          {{ price }}
+          <small :class="changeClasses"
+            >{{ change24H }}
+            <span v-if="showRocket"
+              ><font-awesome-icon
+                :icon="['fad', 'rocket-launch']"
+                size="sm" /></span
+          ></small>
         </p>
       </div>
     </div>
@@ -60,6 +67,9 @@ export default {
       }
 
       return ['change', 'change-negative']
+    },
+    showRocket() {
+      return this.switcheoStats.change24H >= 10
     },
     vol24H() {
       return this.$n(this.switcheoStats.vol24H, 'volume')

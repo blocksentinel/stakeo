@@ -39,7 +39,10 @@
           type="is-primary"
           size="is-large"
           multilined
-          ><font-awesome-icon icon="question-circle" size="sm" class="ml-1"
+          ><font-awesome-icon
+            :icon="['fad', 'question-circle']"
+            size="sm"
+            class="ml-1"
         /></b-tooltip>
       </h4>
       <div class="columns is-multiline is-mobile mb-0">
