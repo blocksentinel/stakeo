@@ -9,7 +9,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Switcheo TradeHub Staking Calculator',
+    title: 'Staking SWTH - The Switcheo TradeHub Staking Calculator',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,7 +17,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Blockchain analytics and staking tools for Switcheo TradeHub.',
+          'Blockchain analytics, calculators and staking tools for the SWTH token and Switcheo TradeHub.',
       },
     ],
     link: [
