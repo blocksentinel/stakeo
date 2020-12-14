@@ -113,7 +113,7 @@
       </b-field>
     </div>
     <div class="panel-block">
-      <b-button type="is-primary" class="is-fullwidth" @click="calculate">
+      <b-button type="is-primary" class="is-fullwidth" @click="getFeeEstimate">
         {{ $t('calculator.button') }}
         <img
           src="../assets/switcheo-arrow-icon-light.svg"
@@ -130,27 +130,114 @@
 import { mapActions, mapState } from 'vuex'
 
 export default {
-  data() {
-    return {
-      volume: 30,
-      fee: 150,
-      bonded: 1,
-      bondedMax: 2160000000,
-      stake: 100000,
-      stakeMax: 2160000000,
-      volumeStep: 1,
-      volumeMin: 1,
-      volumeMax: 500,
-      volumeUpperMax: 500000,
-      feeStep: 5,
-      feeTicks: true,
-      advanced: false,
-    }
-  },
   computed: {
     ...mapState('stats', {
       networkStats: 'networkStats',
     }),
+    volume: {
+      get() {
+        return this.$store.state.calculator.volume
+      },
+      set(value) {
+        this.$store.commit('calculator/setVolume', value)
+      },
+    },
+    fee: {
+      get() {
+        return this.$store.state.calculator.fee
+      },
+      set(value) {
+        this.$store.commit('calculator/setFee', value)
+      },
+    },
+    bonded: {
+      get() {
+        return this.$store.state.calculator.bonded
+      },
+      set(value) {
+        this.$store.commit('calculator/setBonded', value)
+      },
+    },
+    bondedMax: {
+      get() {
+        return this.$store.state.calculator.bondedMax
+      },
+      set(value) {
+        this.$store.commit('calculator/setBondedMax', value)
+      },
+    },
+    stake: {
+      get() {
+        return this.$store.state.calculator.stake
+      },
+      set(value) {
+        this.$store.commit('calculator/setStake', value)
+      },
+    },
+    stakeMax: {
+      get() {
+        return this.$store.state.calculator.stakeMax
+      },
+      set(value) {
+        this.$store.commit('calculator/setStakeMax', value)
+      },
+    },
+    volumeStep: {
+      get() {
+        return this.$store.state.calculator.volumeStep
+      },
+      set(value) {
+        this.$store.commit('calculator/setVolumeStep', value)
+      },
+    },
+    volumeMin: {
+      get() {
+        return this.$store.state.calculator.volumeMin
+      },
+      set(value) {
+        this.$store.commit('calculator/setVolumeMin', value)
+      },
+    },
+    volumeMax: {
+      get() {
+        return this.$store.state.calculator.volumeMax
+      },
+      set(value) {
+        this.$store.commit('calculator/setVolumeMax', value)
+      },
+    },
+    volumeUpperMax: {
+      get() {
+        return this.$store.state.calculator.volumeUpperMax
+      },
+      set(value) {
+        this.$store.commit('calculator/setVolumeUpperMax', value)
+      },
+    },
+    feeStep: {
+      get() {
+        return this.$store.state.calculator.feeStep
+      },
+      set(value) {
+        this.$store.commit('calculator/setFeeStep', value)
+      },
+    },
+    feeTicks: {
+      get() {
+        return this.$store.state.calculator.feeTicks
+      },
+      set(value) {
+        this.$store.commit('calculator/setFeeTicks', value)
+      },
+    },
+    advanced: {
+      get() {
+        return this.$store.state.calculator.advanced
+      },
+      set(value) {
+        this.$store.commit('calculator/setAdvanced', value)
+      },
+    },
     stakeValue() {
       return this.stake * this.networkStats.price
     },
@@ -180,23 +267,6 @@ export default {
       })
     },
   },
-  watch: {
-    advanced(newValue, oldValue) {
-      if (newValue) {
-        this.volumeStep = 1
-        this.volumeMin = 500
-        this.volumeMax = 5000
-        this.feeStep = 1
-        this.feeTicks = false
-      } else {
-        this.volumeStep = 1
-        this.volumeMin = 1
-        this.volumeMax = 500
-        this.feeStep = 5
-        this.feeTicks = true
-      }
-    },
-  },
   mounted() {
     if (this.bonded <= 1) {
       this.bonded = Math.ceil(this.networkStats.bondedSupply)
@@ -206,14 +276,6 @@ export default {
     ...mapActions('calculator', {
       getFeeEstimate: 'getFeeEstimate',
     }),
-    async calculate() {
-      await this.getFeeEstimate({
-        volume: this.volume,
-        fee: this.fee,
-        bonded: this.bonded,
-        stake: this.stake,
-      })
-    },
     formatVolume(val) {
       if (val > 999) {
         return this.$t('calculator.volumeCompactBillion', { value: val / 1000 })
