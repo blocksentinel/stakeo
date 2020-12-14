@@ -53,6 +53,9 @@
         >
           <Card :title="`${item.percent}%`" type="is-transparent">
             {{ $n(item.price, 'currencyToken') }}
+            <small class="is-block is-size-7 is-muted">
+              ({{ $n(item.price * stake, 'currency') }})
+            </small>
           </Card>
         </div>
       </div>
@@ -76,6 +79,7 @@ export default {
   components: { Card },
   computed: {
     ...mapState('calculator', {
+      stake: 'stake',
       feeEstimate: 'feeEstimate',
     }),
     daily() {
