@@ -77,6 +77,13 @@ export default {
     activeProposalCount() {
       return this.networkStats.activeProposalCount
     },
+    proposalMessage() {
+      return this.$t('network.proposalMessage', {
+        vote: `<a href="https://switcheo.org/governance?net=main" target="_blank" rel="noopener">${this.$t(
+          'network.vote'
+        )}</a>`,
+      })
+    },
   },
   watch: {
     activeProposalCount: {
@@ -91,7 +98,7 @@ export default {
 
         this.$buefy.toast.open({
           duration: 5000,
-          message: this.$t('network.proposalMessage'),
+          message: this.proposalMessage,
           type: 'is-secondary',
           position: 'is-bottom',
         })

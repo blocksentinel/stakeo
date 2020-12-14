@@ -44,7 +44,8 @@ export default {
     bondHeading: 'Bonded',
     volume24Hour: '24 Hour Volume',
     proposalMessage:
-      'A TradeHub Improvement Proposal (TIP) is currently being voted on. <a href="https://switcheo.org/governance?net=main" target="_blank" rel="noopener">Place your vote now!</a>',
+      'A TradeHub Improvement Proposal (TIP) is currently being voted on. {vote}',
+    vote: 'Place your vote now!',
   },
   vendor: {
     blockSentinel: 'Block Sentinel',
