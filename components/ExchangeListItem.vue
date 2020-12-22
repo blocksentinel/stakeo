@@ -1,6 +1,6 @@
 <template>
   <div class="control">
-    <div class="mb-1">
+    <div class="mb-1 is-truncated">
       <img :src="logo" class="logo mr-1" width="20" height="20" :alt="name" />
       <span class="is-italic">{{ name }}</span>
     </div>
