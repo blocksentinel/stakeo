@@ -7,14 +7,14 @@
         </b-navbar-item>
       </template>
       <template slot="end">
-        <b-navbar-item
-          href="https://switcheo.org/"
-          target="_blank"
-          rel="noopener"
-        >
-          {{ $t('vendor.switcheoTradescan') }}
-        </b-navbar-item>
-        <b-navbar-dropdown :label="$t('vendor.switcheoEcosystem')">
+        <b-navbar-dropdown :label="$t('nav.resources')">
+          <b-navbar-item
+            href="https://switcheo.org/"
+            target="_blank"
+            rel="noopener"
+          >
+            {{ $t('vendor.switcheoTradescan') }}
+          </b-navbar-item>
           <b-navbar-item
             href="https://switcheo.exchange/"
             target="_blank"

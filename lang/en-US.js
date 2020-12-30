@@ -1,5 +1,8 @@
 export default {
   stakeo: 'Stakeo',
+  nav: {
+    resources: 'Resources',
+  },
   calculator: {
     heading: 'Staking Calculator',
     headingTooltip:
