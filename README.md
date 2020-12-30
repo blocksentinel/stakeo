@@ -1,12 +1,19 @@
 # Stakeo
 
-> Blockchain analysis and staking tools for Switcheo TradeHub using NuxtJS and Buefy.
+> Blockchain analytics, calculators and staking tools for the SWTH token and Switcheo TradeHub using NuxtJS and Buefy.
 
 ![GitHub](https://img.shields.io/github/license/blocksentinel/stakeo)
 
 You can access it at https://stakeo.com.
 
-## Build Setup
+## Building Stakeo
+
+### Requirements
+
+* Node.js 14
+* [Font Awesome Pro](https://fontawesome.com/plans)
+
+### Build Setup
 
 ```bash
 # install dependencies

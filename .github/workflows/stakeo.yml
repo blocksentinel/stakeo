@@ -29,10 +29,10 @@ jobs:
       - name: Run tests
         run: |
           if [ -f docker-compose.test.yml ]; then
-            docker-compose --file docker-compose.test.yml build
+            docker-compose --file docker-compose.test.yml build --build-arg FONTAWESOME_NPM_AUTH_TOKEN="${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
             docker-compose --file docker-compose.test.yml run sut
           else
-            docker build . --file $DOCKER_FILE
+            docker build . --file $DOCKER_FILE --build-arg FONTAWESOME_NPM_AUTH_TOKEN="${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
           fi
 
   # Push image to GitHub Packages.
@@ -48,7 +48,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build image
-        run: docker build . --file $DOCKER_FILE --tag $IMAGE_NAME
+        run: docker build . --file $DOCKER_FILE --tag $IMAGE_NAME --build-arg FONTAWESOME_NPM_AUTH_TOKEN="${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
 
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin

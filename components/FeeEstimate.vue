@@ -39,7 +39,10 @@
           type="is-primary"
           size="is-large"
           multilined
-          ><font-awesome-icon icon="question-circle" size="sm" class="ml-1"
+          ><font-awesome-icon
+            :icon="['fad', 'question-circle']"
+            size="sm"
+            class="ml-1"
         /></b-tooltip>
       </h4>
       <div class="columns is-multiline is-mobile mb-0">
@@ -50,6 +53,9 @@
         >
           <Card :title="`${item.percent}%`" type="is-transparent">
             {{ $n(item.price, 'currencyToken') }}
+            <small class="is-block is-size-7 is-muted">
+              ({{ $n(item.price * stake, 'currency') }})
+            </small>
           </Card>
         </div>
       </div>
@@ -73,6 +79,7 @@ export default {
   components: { Card },
   computed: {
     ...mapState('calculator', {
+      stake: 'stake',
       feeEstimate: 'feeEstimate',
     }),
     daily() {

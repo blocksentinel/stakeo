@@ -4,7 +4,14 @@
       <div>
         <p class="heading">{{ $t('network.priceHeading') }}</p>
         <p class="title is-size-6 is-size-5-tablet">
-          {{ price }} <small :class="changeClasses">{{ change24H }}</small>
+          {{ price }}
+          <small :class="changeClasses"
+            >{{ change24H }}
+            <span v-if="showRocket"
+              ><font-awesome-icon
+                :icon="['fad', 'rocket-launch']"
+                size="sm" /></span
+          ></small>
         </p>
       </div>
     </div>
@@ -32,40 +39,50 @@ import { mapState } from 'vuex'
 
 export default {
   computed: {
-    ...mapState('calculator', {
-      switcheoStats: 'switcheoStats',
+    ...mapState('stats', {
+      networkStats: 'networkStats',
     }),
     price() {
-      return this.$n(this.switcheoStats.price, 'currencyToken')
+      return this.$n(this.networkStats.price, 'currencyToken')
     },
     supply() {
       return (
-        this.$n(this.switcheoStats.bondedSupply, 'compact') +
+        this.$n(this.networkStats.bondedSupply, 'compact') +
         ' / ' +
-        this.$n(this.switcheoStats.totalSupply, 'compact')
+        this.$n(this.networkStats.totalSupply, 'compact')
       )
     },
     change24H() {
-      const change = this.switcheoStats.change24H
+      const change = this.networkStats.change24H
       if (change >= 0) {
-        return `+${this.$n(this.switcheoStats.change24H, 'percent')}%`
+        return `+${this.$n(this.networkStats.change24H, 'percent')}%`
       }
 
-      return `${this.$n(this.switcheoStats.change24H, 'percent')}%`
+      return `${this.$n(this.networkStats.change24H, 'percent')}%`
     },
     changeClasses() {
-      const change = this.switcheoStats.change24H
+      const change = this.networkStats.change24H
       if (change >= 0) {
         return ['change', 'change-positive']
       }
 
       return ['change', 'change-negative']
     },
+    showRocket() {
+      return this.networkStats.change24H >= 10
+    },
     vol24H() {
-      return this.$n(this.switcheoStats.vol24H, 'volume')
+      return this.$n(this.networkStats.ecosystem.volume, 'volume')
     },
     activeProposalCount() {
-      return this.switcheoStats.activeProposalCount
+      return this.networkStats.activeProposalCount
+    },
+    proposalMessage() {
+      return this.$t('network.proposalMessage', {
+        vote: `<a href="https://switcheo.org/governance?net=main" target="_blank" rel="noopener">${this.$t(
+          'network.vote'
+        )}</a>`,
+      })
     },
   },
   watch: {
@@ -81,7 +98,7 @@ export default {
 
         this.$buefy.toast.open({
           duration: 5000,
-          message: this.$t('network.proposalMessage'),
+          message: this.proposalMessage,
           type: 'is-secondary',
           position: 'is-bottom',
         })
