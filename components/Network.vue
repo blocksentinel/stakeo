@@ -72,7 +72,7 @@ export default {
       return this.networkStats.change24H >= 10
     },
     vol24H() {
-      return this.$n(this.networkStats.vol24H, 'volume')
+      return this.$n(this.networkStats.ecosystem.volume, 'volume')
     },
     activeProposalCount() {
       return this.networkStats.activeProposalCount

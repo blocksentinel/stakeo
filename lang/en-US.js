@@ -42,7 +42,7 @@ export default {
   network: {
     priceHeading: '@:vendor.swthTicker Price',
     bondHeading: 'Bonded',
-    volume24Hour: '24 Hour Volume',
+    volume24Hour: 'Ecosystem Volume (24H)',
     proposalMessage:
       'A TradeHub Improvement Proposal (TIP) is currently being voted on. {vote}',
     vote: 'Place your vote now!',
