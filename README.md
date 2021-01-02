@@ -1,6 +1,6 @@
 # Stakeo
 
-> Blockchain analytics, calculators and staking tools for the SWTH token and Switcheo TradeHub using NuxtJS and Buefy.
+> Blockchain analytics, calculators and staking tools for the SWTH token and Switcheo TradeHub.
 
 ![GitHub](https://img.shields.io/github/license/blocksentinel/stakeo)
 

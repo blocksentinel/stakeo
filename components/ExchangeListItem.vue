@@ -24,11 +24,11 @@ export default {
       return this.$n(this.exchange.volume, 'volume')
     },
     logo() {
-      try {
-        return require(`@/assets/exchanges/${this.exchange.id}.webp`)
-      } catch (e) {
-        return require('@/assets/logo-light.svg')
+      if (this.exchange.imageUrl) {
+        return this.exchange.imageUrl
       }
+
+      return require('@/assets/logo-light.svg')
     },
   },
 }
