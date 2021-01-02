@@ -41,6 +41,15 @@ export default {
       },
       { rel: 'manifest', href: '/site.webmanifest' },
     ],
+    script: [
+      {
+        src: 'https://cdn.usefathom.com/script.js',
+        'data-site': process.env.ANALYTICS_SITE_ID || '',
+        'data-included-domains': process.env.ANALYTICS_DOMAINS || '',
+        'data-spa': 'auto',
+        defer: true,
+      },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
