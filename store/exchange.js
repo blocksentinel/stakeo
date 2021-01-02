@@ -44,20 +44,6 @@ export const actions = {
           )
         )
       })
-      .catch((error) => {
-        // let errors = null
-        // if (
-        //   error.response.status === 400 &&
-        //   error.response.data.errors !== undefined
-        // ) {
-        //   errors = error.response.data.errors
-        // }
-        // commit(SET_CUSTOMER_UPDATE_STATUS, {
-        //   status: false,
-        //   id: null,
-        //   errors,
-        // })
-        console.log(error)
-      })
+      .catch((_) => {})
   },
 }
