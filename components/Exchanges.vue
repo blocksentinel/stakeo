@@ -1,21 +1,15 @@
 <template>
   <div>
     <ExchangeList
-      :title="$t('exchange.decentralizedHeading')"
-      :help-text="$t('exchange.decentralizedHeadingTooltip')"
-      :exchanges="dexs"
+      :title="$t('exchange.ecosystemHeading')"
+      :exchanges="ecosystem"
       class="mb-4"
+      featured
     />
     <ExchangeList
-      :title="$t('exchange.derivativesHeading')"
-      :help-text="$t('exchange.derivativesHeadingTooltip')"
-      :exchanges="ders"
+      :title="$t('exchange.comparablesHeading')"
+      :exchanges="comparables"
       class="mb-4"
-    />
-    <ExchangeList
-      :title="$t('exchange.centralizedHeading')"
-      :help-text="$t('exchange.centralizedHeadingTooltip')"
-      :exchanges="cexs"
     />
   </div>
 </template>
@@ -28,9 +22,8 @@ export default {
   components: { ExchangeList },
   computed: {
     ...mapState('exchange', {
-      cexs: 'cexs',
-      dexs: 'dexs',
-      ders: 'ders',
+      ecosystem: 'ecosystem',
+      comparables: 'comparables',
     }),
   },
 }

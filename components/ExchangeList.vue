@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="panel is-light">
+    <div :class="panelClasses">
       <div class="panel-heading is-size-6">
         <span
           >{{ title }}
@@ -21,7 +21,7 @@
         </small>
       </div>
       <div class="panel-block p-0">
-        <div class="columns is-marginless is-multiline">
+        <div class="columns is-marginless is-multiline is-flex-grow-1">
           <div
             v-for="exchange in exchanges"
             :key="exchange.id"
@@ -52,6 +52,19 @@ export default {
     exchanges: {
       type: Array,
       required: true,
+    },
+    featured: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    panelClasses() {
+      return [
+        'panel',
+        { 'is-light': !this.featured },
+        { 'is-secondary': this.featured },
+      ]
     },
   },
 }

@@ -1,18 +1,14 @@
 export const state = () => ({
-  cexs: [],
-  dexs: [],
-  ders: [],
+  ecosystem: [],
+  comparables: [],
 })
 
 export const mutations = {
-  setCex(state, value) {
-    state.cexs = value
+  setEcosystem(state, value) {
+    state.ecosystem = value
   },
-  setDex(state, value) {
-    state.dexs = value
-  },
-  setDer(state, value) {
-    state.ders = value
+  setComparables(state, value) {
+    state.comparables = value
   },
 }
 
@@ -26,21 +22,15 @@ export const actions = {
       })
       .then((response) => {
         commit(
-          'setCex',
+          'setEcosystem',
           response.data.exchanges.filter(
-            (exchange) => exchange.type === 'Centralized'
+            (exchange) => exchange.featured === true
           )
         )
         commit(
-          'setDex',
+          'setComparables',
           response.data.exchanges.filter(
-            (exchange) => exchange.type === 'Decentralized'
-          )
-        )
-        commit(
-          'setDer',
-          response.data.exchanges.filter(
-            (exchange) => exchange.type === 'Derivatives'
+            (exchange) => exchange.featured !== true
           )
         )
       })

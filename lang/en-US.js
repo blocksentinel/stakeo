@@ -31,15 +31,8 @@ export default {
     rateMessage: 'Estimated based on annual return rates.',
   },
   exchange: {
-    decentralizedHeading: 'Decentralized',
-    decentralizedHeadingTooltip:
-      'A decentralized exchange (DEX) is a cryptocurrency exchange which operates in a decentralized way, i.e., without a central authority. Decentralized exchanges allow peer-to-peer trading of cryptocurrencies.',
-    derivativesHeading: 'Derivatives',
-    derivativesHeadingTooltip:
-      'Derivatives are tradable securities or contracts that derive their value from an underlying asset. In the case of cryptocurrency derivatives, the underlying asset is, in most cases, Bitcoin (BTC), or other top cryptocurrencies.',
-    centralizedHeading: 'Centralized',
-    centralizedHeadingTooltip:
-      'A centralized exchange (CEX) is a cryptocurrency exchange which operates more like a traditional bank, acting as custodian of your funds. Centralized exchanges generally follow know your customer (KYC) and Anti-Money Laundering (AML) regulations.',
+    ecosystemHeading: '@:vendor.switcheoEcosystem',
+    comparablesHeading: 'Exchange Volume Comparison',
     volume30DayLabel: '30 Day Volume (USD)',
   },
   network: {
