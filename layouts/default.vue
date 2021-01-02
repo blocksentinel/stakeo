@@ -34,6 +34,15 @@ export default {
           content: `${this.$config.appName} ${this.$config.appVersion}`,
         },
       ],
+      script: [
+        {
+          src: 'https://cdn.usefathom.com/script.js',
+          'data-site': this.$config.analyticsSiteId,
+          'data-included-domains': this.$config.analyticsDomains,
+          'data-spa': 'auto',
+          defer: true,
+        },
+      ],
     }
   },
   computed: {
