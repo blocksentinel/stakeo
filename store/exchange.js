@@ -13,7 +13,7 @@ export const mutations = {
 }
 
 export const actions = {
-  async getExchanges({ commit }, payload) {
+  async getExchanges({ commit }) {
     await this.$axios
       .get('/api/exchange/volume', {
         params: {
