@@ -9,7 +9,7 @@ export const mutations = {
 }
 
 export const actions = {
-  async getNetworkStats({ commit }, payload) {
+  async getNetworkStats({ commit }) {
     await this.$axios
       .get('/api/stats/network', {
         params: {

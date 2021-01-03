@@ -1,11 +1,20 @@
 <template>
   <div class="control">
-    <div class="is-truncated">
-      <img :src="logo" class="logo mr-1" width="20" height="20" :alt="name" />
-      <span class="is-italic">{{ name }}</span>
+    <div class="image-container mb-1">
+      <b-image
+        :src="logo"
+        :alt="name"
+        width="50"
+        height="50"
+        ratio="1by1"
+        rounded
+      />
     </div>
-    <div class="is-truncated">
-      <small>{{ volume }}</small>
+    <div class="has-text-centered is-truncated">
+      <span class="has-text-weight-semibold">{{ name }}</span>
+    </div>
+    <div class="has-text-centered is-truncated">
+      <span>{{ volume }}</span>
     </div>
   </div>
 </template>
@@ -36,8 +45,9 @@ export default {
 }
 </script>
 
-<style scoped>
-.logo {
-  vertical-align: text-bottom;
+<style lang="scss" scoped>
+.image-container {
+  max-width: 3rem;
+  margin: 0 auto;
 }
 </style>
