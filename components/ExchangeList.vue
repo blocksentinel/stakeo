@@ -24,7 +24,7 @@
         <div class="columns is-marginless is-multiline is-flex-grow-1">
           <div
             v-for="exchange in exchanges"
-            :key="exchange.id"
+            :key="exchange.slug"
             class="column is-one-third-desktop is-half-tablet py-2"
           >
             <div v-if="featured">
@@ -77,9 +77,10 @@ export default {
       ]
     },
     totalVolume() {
-      const volume = Object.values(this.exchanges).reduce(
-        (a, b) => a.volume + b.volume
-      )
+      let volume = 0
+      for (let i = 0; this.exchanges.length > i; i++) {
+        volume += this.exchanges[i].volume
+      }
 
       return this.$n(volume, 'volume')
     },
