@@ -26,6 +26,8 @@ export default {
     await this.$store.dispatch('exchange/getExchanges')
   },
   head() {
+    const skipAnalytics = !this.$config.analytics.scriptSrc
+
     return {
       meta: [
         {
@@ -36,10 +38,12 @@ export default {
       ],
       script: [
         {
-          src: 'https://cdn.usefathom.com/script.js',
-          'data-site': this.$config.analyticsSiteId,
-          'data-included-domains': this.$config.analyticsDomains,
+          src: this.$config.analytics.scriptSrc,
+          'data-site': this.$config.analytics.siteId,
+          'data-included-domains': this.$config.analytics.includedDomains,
           'data-spa': 'auto',
+          once: true,
+          skip: skipAnalytics,
           defer: true,
         },
       ],

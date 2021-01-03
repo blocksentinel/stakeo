@@ -145,8 +145,11 @@ export default {
   },
 
   publicRuntimeConfig: {
-    analyticsSiteId: process.env.ANALYTICS_SITE_ID || '',
-    analyticsDomains: process.env.ANALYTICS_DOMAINS || '',
+    analytics: {
+      scriptSrc: process.env.ANALYTICS_SCRIPT_SRC,
+      siteId: process.env.ANALYTICS_SITE_ID,
+      includedDomains: process.env.ANALYTICS_INCLUDED_DOMAINS,
+    },
     appName: process.env.npm_package_name,
     appVersion: process.env.npm_package_version,
     axios: {
