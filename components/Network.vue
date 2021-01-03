@@ -43,7 +43,7 @@ export default {
       networkStats: 'networkStats',
     }),
     price() {
-      return this.$n(this.networkStats.price, 'currencyToken')
+      return this.$n(this.networkStats.token.price, 'currencyToken')
     },
     supply() {
       return (
@@ -53,15 +53,15 @@ export default {
       )
     },
     change24H() {
-      const change = this.networkStats.change24H
+      const change = this.networkStats.token.change24H
       if (change >= 0) {
-        return `+${this.$n(this.networkStats.change24H, 'percent')}%`
+        return `+${this.$n(change, 'percent')}%`
       }
 
-      return `${this.$n(this.networkStats.change24H, 'percent')}%`
+      return `${this.$n(change, 'percent')}%`
     },
     changeClasses() {
-      const change = this.networkStats.change24H
+      const change = this.networkStats.token.change24H
       if (change >= 0) {
         return ['change', 'change-positive']
       }
@@ -69,7 +69,7 @@ export default {
       return ['change', 'change-negative']
     },
     showRocket() {
-      return this.networkStats.change24H >= 10
+      return this.networkStats.token.change24H >= 10
     },
     vol24H() {
       return this.$n(this.networkStats.ecosystem.volume, 'volume')

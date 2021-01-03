@@ -24,7 +24,7 @@
         <div class="columns is-marginless is-multiline is-flex-grow-1">
           <div
             v-for="exchange in exchanges"
-            :key="exchange.id"
+            :key="exchange.slug"
             class="column is-one-third-desktop is-half-tablet py-2"
           >
             <div v-if="featured">
