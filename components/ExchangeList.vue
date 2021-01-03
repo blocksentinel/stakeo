@@ -27,9 +27,19 @@
             :key="exchange.id"
             class="column is-one-third-desktop is-half-tablet py-2"
           >
-            <ExchangeListItem :exchange="exchange" />
+            <div v-if="featured">
+              <FeaturedExchangeListItem :exchange="exchange" />
+            </div>
+            <div v-else>
+              <ExchangeListItem :exchange="exchange" />
+            </div>
           </div>
         </div>
+      </div>
+      <div v-if="featured" class="panel-footer has-text-centered is-size-7">
+        <span
+          >Total Ecosystem Volume: <span>{{ totalVolume }}</span></span
+        >
       </div>
     </div>
   </div>
@@ -66,6 +76,13 @@ export default {
         { 'is-secondary': this.featured },
       ]
     },
+    totalVolume() {
+      const volume = Object.values(this.exchanges).reduce(
+        (a, b) => a.volume + b.volume
+      )
+
+      return this.$n(volume, 'volume')
+    },
   },
 }
 </script>
@@ -79,5 +96,12 @@ export default {
 
 .panel-heading > small {
   font-weight: $weight-light;
+}
+
+.panel-footer {
+  background-color: whitesmoke;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.25;
+  padding: 0.75em 1em;
 }
 </style>
