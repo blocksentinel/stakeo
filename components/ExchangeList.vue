@@ -77,9 +77,10 @@ export default {
       ]
     },
     totalVolume() {
-      const volume = Object.values(this.exchanges).reduce(
-        (a, b) => a.volume + b.volume
-      )
+      let volume = 0
+      for (let i = 0; this.exchanges.length > i; i++) {
+        volume += this.exchanges[i].volume
+      }
 
       return this.$n(volume, 'volume')
     },
