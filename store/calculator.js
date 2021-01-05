@@ -77,7 +77,7 @@ export const mutations = {
 export const actions = {
   async getFeeEstimate({ state, commit }) {
     await this.$axios
-      .get('/api/fee/estimate', {
+      .get('/api/calculator/stake/estimate', {
         params: {
           volume: state.volume,
           fee: state.fee,

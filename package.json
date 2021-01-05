@@ -1,6 +1,6 @@
 {
   "name": "stakeo",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -17,9 +17,9 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/pro-duotone-svg-icons": "^5.15.1",
     "@fortawesome/vue-fontawesome": "^2.0.2",
-    "@nuxtjs/axios": "^5.12.4",
+    "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/proxy": "^2.1.0",
-    "core-js": "^3.8.1",
+    "core-js": "^3.8.2",
     "nuxt": "^2.14.12",
     "nuxt-buefy": "^0.4.3",
     "nuxt-i18n": "^6.16.0"
@@ -37,7 +37,7 @@
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "fibers": "^5.0.0",
     "jsdom": "^16.4.0",
     "jsdom-global": "^3.0.2",

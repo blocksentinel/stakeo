@@ -239,10 +239,10 @@ export default {
       },
     },
     stakeValue() {
-      return this.stake * this.networkStats.price
+      return this.stake * this.networkStats.token.price
     },
     bondValue() {
-      return this.bonded * this.networkStats.price
+      return this.bonded * this.networkStats.token.price
     },
     volumeMessage() {
       return this.$t('calculator.volumeMessage', {
