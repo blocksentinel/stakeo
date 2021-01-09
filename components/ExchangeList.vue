@@ -79,7 +79,7 @@ export default {
     totalVolume() {
       let volume = 0
       for (let i = 0; this.exchanges.length > i; i++) {
-        volume += this.exchanges[i].volume
+        volume += this.exchanges[i].volume30D
       }
 
       return this.$n(volume, 'volume')

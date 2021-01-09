@@ -23,7 +23,7 @@ export default {
       return this.exchange.name
     },
     volume() {
-      return this.$n(this.exchange.volume, 'volume')
+      return this.$n(this.exchange.volume30D, 'volume')
     },
     logo() {
       if (this.exchange.imageUrl) {

@@ -14,7 +14,7 @@
       <span class="has-text-weight-semibold">{{ name }}</span>
     </div>
     <div class="has-text-centered is-truncated">
-      <span>{{ volume }}</span>
+      <span>{{ volume30D }}</span>
     </div>
   </div>
 </template>
@@ -31,8 +31,11 @@ export default {
     name() {
       return this.exchange.name
     },
-    volume() {
-      return this.$n(this.exchange.volume, 'volume')
+    volume30D() {
+      return this.$n(this.exchange.volume30D, 'volume')
+    },
+    volume24H() {
+      return this.$n(this.exchange.volume24H, 'volume')
     },
     logo() {
       if (this.exchange.imageUrl) {
