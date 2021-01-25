@@ -1,7 +1,13 @@
 export default {
   stakeo: 'Stakeo',
   nav: {
+    home: 'Home',
+    volumeChart: 'Volume Chart',
+    stakingCalculator: 'Staking Calculator',
     resources: 'Resources',
+  },
+  chart: {
+    message: '',
   },
   calculator: {
     heading: 'Staking Calculator',
