@@ -50,7 +50,7 @@ export default {
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/fontawesome.js'],
+  plugins: ['~/plugins/fontawesome.js', '~/plugins/helpers.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -68,6 +68,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'nuxt-i18n',
+    // https://github.com/nuxt-community/redirect-module
+    '@nuxtjs/redirect-module',
   ],
 
   buefy: {
@@ -123,6 +125,8 @@ export default {
       },
     },
   },
+
+  redirect: [{ from: '^/$', to: '/staking-calculator', statusCode: 301 }],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
