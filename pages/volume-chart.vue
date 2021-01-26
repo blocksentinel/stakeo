@@ -6,18 +6,23 @@
         <LineChart :chart-data="chartData" :options="chartOptions" />
       </div>
     </div>
-    <div v-if="rawData" class="columns">
-      <div class="column is-10-tablet is-offset-1-tablet">
-        <p>
-          Stakeo is currently tracking {{ exchangeCount }} exchanges in the
-          Switcheo Ecosystem. These exchanges have generated a total trading
-          volume of {{ $n(totalVolume, 'volume') }} in the last 30 days.
+    <div class="columns">
+      <div class="column is-8-tablet is-offset-2-tablet">
+        <p v-if="rawData">
+          Stakeo is tracking {{ exchangeCount }} exchanges in the Switcheo
+          Ecosystem. These exchanges have generated a total trading volume of
+          {{ $n(totalVolume, 'volume') }} in the last 30 days.
           <span v-for="exchange in exchanges" :key="exchange.slug"
-            >The exchange {{ exchange.name }} has contributed
+            >The exchange <strong>{{ exchange.name }}</strong> has contributed
             {{ $n(sumVolume(exchange), 'volume') }} to the total
             volume.&nbsp;</span
           >
         </p>
+        <div v-else>
+          <b-skeleton width="100%" :animated="true" />
+          <b-skeleton width="100%" :animated="true" />
+          <b-skeleton width="35%" :animated="true" />
+        </div>
       </div>
     </div>
   </section>
