@@ -24,12 +24,10 @@
 </template>
 
 <script>
-import LineChart from '@/components/linechart'
+import LineChart from '@/plugins/charts'
 
 export default {
-  components: {
-    LineChart,
-  },
+  components: { LineChart },
   data() {
     const defaultFontColor = '#363636'
     const defaultFontSize = 14
@@ -89,6 +87,7 @@ export default {
                 fontSize: defaultFontSize,
               },
               ticks: {
+                // Causes issues with SSR
                 // callback(value, index, values) {
                 //   return '$' + value
                 // },
