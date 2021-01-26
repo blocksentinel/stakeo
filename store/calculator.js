@@ -78,7 +78,7 @@ export const actions = {
   async getFeeEstimate({ state, commit }) {
     try {
       if (typeof window.fathom !== 'undefined') {
-        window.fathom.trackGoal('feeEstimate', 0)
+        window.fathom.trackGoal('XA7FYTTH', 0)
       }
     } catch (_) {}
 
