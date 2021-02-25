@@ -2,11 +2,25 @@
   <header>
     <b-navbar type="is-primary" wrapper-class="container">
       <template slot="brand">
-        <b-navbar-item tag="router-link" :to="localePath({ path: '/' })">
+        <b-navbar-item
+          tag="router-link"
+          :to="localePath({ name: 'staking-calculator' })"
+        >
           <img src="../assets/logo-light.svg" :alt="$t('stakeo')" width="32" />
         </b-navbar-item>
       </template>
-      <template slot="end">
+      <template slot="start">
+        <b-navbar-item
+          tag="router-link"
+          :to="localePath({ name: 'staking-calculator' })"
+          >{{ $t('nav.stakingCalculator') }}</b-navbar-item
+        >
+        <b-navbar-item
+          tag="router-link"
+          :to="localePath({ name: 'volume-chart' })"
+        >
+          {{ $t('nav.volumeChart') }}
+        </b-navbar-item>
         <b-navbar-dropdown :label="$t('nav.resources')">
           <b-navbar-item
             href="https://switcheo.org/"

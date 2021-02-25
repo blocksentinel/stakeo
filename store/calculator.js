@@ -76,6 +76,12 @@ export const mutations = {
 
 export const actions = {
   async getFeeEstimate({ state, commit }) {
+    try {
+      if (typeof window.fathom !== 'undefined') {
+        window.fathom.trackGoal('XA7FYTTH', 0)
+      }
+    } catch (_) {}
+
     await this.$axios
       .get('/api/calculator/stake/estimate', {
         params: {
