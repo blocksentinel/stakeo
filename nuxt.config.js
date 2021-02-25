@@ -54,6 +54,7 @@ export default {
     '~/plugins/fontawesome.js',
     '~/plugins/helpers.js',
     '~/plugins/charts.js',
+    '~/plugins/persistedState.js',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
