@@ -41,7 +41,33 @@
       <div v-if="advanced" class="control">
         <div class="columns">
           <div class="column">
-            <b-field label="Volume Cap" class="control">
+            <b-field label="Volume Tuner" class="control">
+              <b-numberinput
+                v-model="volume"
+                size="is-small"
+                type="is-light"
+                :exponential="1"
+                :max="volumeMax"
+                controls-alignment="right"
+                controls-position="compact"
+              />
+            </b-field>
+          </div>
+          <div class="column">
+            <b-field label="Min. Volume" class="control">
+              <b-numberinput
+                v-model="volumeMin"
+                size="is-small"
+                type="is-light"
+                :exponential="1"
+                :max="volumeMax"
+                controls-alignment="right"
+                controls-position="compact"
+              />
+            </b-field>
+          </div>
+          <div class="column">
+            <b-field label="Max Volume" class="control">
               <b-numberinput
                 v-model="volumeMax"
                 size="is-small"
