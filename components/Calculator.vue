@@ -277,11 +277,19 @@ export default {
       getFeeEstimate: 'getFeeEstimate',
     }),
     formatVolume(val) {
-      if (val > 999) {
-        return this.$t('calculator.volumeCompactBillion', { value: val / 1000 })
+      if (val > 999999999999) {
+        return this.$t('calculator.volumeCompactTrillion', {
+          value: (val / 1000000000000).toFixed(1),
+        })
+      } else if (val > 999999999) {
+        return this.$t('calculator.volumeCompactBillion', {
+          value: (val / 1000000000).toFixed(1),
+        })
+      } else {
+        return this.$t('calculator.volumeCompactMillion', {
+          value: (val / 1000000).toFixed(1),
+        })
       }
-
-      return this.$t('calculator.volumeCompactMillion', { value: val })
     },
     formatFee(val) {
       return `${val / 1000}%`

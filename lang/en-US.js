@@ -25,6 +25,7 @@ export default {
     button: 'Calculate',
     volumeCompactMillion: '{value} million',
     volumeCompactBillion: '{value} billion',
+    volumeCompactTrillion: '{value} trillion',
   },
   estimate: {
     daily: 'Daily',
