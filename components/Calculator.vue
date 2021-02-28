@@ -129,8 +129,8 @@
           v-model="stake"
           type="is-secondary"
           :exponential="1"
-          :step="1000"
-          :min="1000"
+          :step="1"
+          :min="1"
           :max="stakeMax"
           expanded
           controls-alignment="right"
