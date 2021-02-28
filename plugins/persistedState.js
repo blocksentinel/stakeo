@@ -22,7 +22,11 @@ export default ({ store, req, isDev }) => {
           fee: state.calculator.fee,
           bonded: state.calculator.bonded,
           stake: state.calculator.stake,
+          volumeStep: state.calculator.volumeStep,
+          volumeMin: state.calculator.volumeMin,
           volumeMax: state.calculator.volumeMax,
+          feeStep: state.calculator.feeStep,
+          feeTicks: state.calculator.feeTicks,
           advanced: state.calculator.advanced,
         },
       }
