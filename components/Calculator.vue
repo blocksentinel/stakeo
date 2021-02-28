@@ -272,7 +272,7 @@ export default {
     },
     volumeMessage() {
       return this.$t('calculator.volumeMessage', {
-        amount: this.$n(this.volume * 1000000, 'volume'),
+        amount: this.$n(this.volume, 'volume'),
       })
     },
     feeMessage() {
