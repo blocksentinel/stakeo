@@ -101,7 +101,7 @@
         />
       </b-field>
     </div>
-    <div class="panel-block">
+    <div class="panel-block is-flex-direction-column">
       <b-field
         :label="$t('calculator.bondControlLabel')"
         class="control"
@@ -118,6 +118,9 @@
           controls-position="compact"
         />
       </b-field>
+      <div v-if="bondedOutOfSync" class="control has-text-centered">
+        <b-button size="is-small" @click="syncBonded">Sync Bonded</b-button>
+      </div>
     </div>
     <div class="panel-block">
       <b-field
@@ -267,8 +270,11 @@ export default {
     stakeValue() {
       return this.stake * this.networkStats.token.price
     },
-    bondValue() {
+    bondedValue() {
       return this.bonded * this.networkStats.token.price
+    },
+    bondedOutOfSync() {
+      return this.bonded !== Math.ceil(this.networkStats.bondedSupply)
     },
     volumeMessage() {
       return this.$t('calculator.volumeMessage', {
@@ -289,7 +295,7 @@ export default {
     bondedMessage() {
       return this.$t('calculator.bondMessage', {
         amount: this.$n(this.bonded, 'crypto'),
-        value: this.$n(this.bondValue, 'currency'),
+        value: this.$n(this.bondedValue, 'currency'),
       })
     },
   },
@@ -319,6 +325,9 @@ export default {
     },
     formatFee(val) {
       return `${val / 1000}%`
+    },
+    syncBonded() {
+      this.bonded = Math.ceil(this.networkStats.bondedSupply)
     },
   },
 }
