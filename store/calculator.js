@@ -54,17 +54,17 @@ export const mutations = {
   },
   setAdvanced(state, value) {
     if (value) {
-      this.volumeStep = 1
-      this.volumeMin = 500
-      this.volumeMax = 5000
-      this.feeStep = 1
-      this.feeTicks = false
+      state.volumeStep = 1
+      state.volumeMin = 1000000000
+      state.volumeMax = 1000000000000
+      state.feeStep = 1
+      state.feeTicks = false
     } else {
-      this.volumeStep = 1
-      this.volumeMin = 1
-      this.volumeMax = 500
-      this.feeStep = 5
-      this.feeTicks = true
+      state.volumeStep = 1
+      state.volumeMin = 1000000
+      state.volumeMax = 1000000000
+      state.feeStep = 5
+      state.feeTicks = true
     }
 
     state.advanced = value
