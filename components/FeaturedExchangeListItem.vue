@@ -11,7 +11,15 @@
       />
     </div>
     <div class="has-text-centered is-truncated">
-      <span class="has-text-weight-semibold">{{ name }}</span>
+      <a
+        v-if="url"
+        :href="url"
+        target="_blank"
+        rel="noopener"
+        class="has-text-weight-semibold"
+        >{{ name }}</a
+      >
+      <span v-else class="has-text-weight-semibold">{{ name }}</span>
     </div>
     <div class="has-text-centered is-truncated">
       <span>{{ volume30D }}</span>
@@ -44,11 +52,18 @@ export default {
 
       return require('@/assets/logo-light.svg')
     },
+    url() {
+      return this.exchange.siteUrl
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+a {
+  color: #363636;
+}
+
 .image-container {
   max-width: 3rem;
   margin: 0 auto;
