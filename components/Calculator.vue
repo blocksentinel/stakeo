@@ -97,7 +97,7 @@
           :custom-formatter="formatFee"
           :ticks="feeTicks"
           :min="75"
-          :max="200"
+          :max="250"
           :step="feeStep"
           type="is-secondary"
           tooltip-type="is-primary"
