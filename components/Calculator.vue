@@ -38,7 +38,7 @@
           tooltip-type="is-primary"
         />
       </b-field>
-      <div v-if="advanced" class="control">
+      <div v-if="advanced" class="control is-expanded">
         <div class="columns">
           <div class="column">
             <b-field label="Volume Tuner" class="control">
@@ -48,6 +48,7 @@
                 type="is-light"
                 :exponential="1"
                 :max="volumeMax"
+                expanded
                 controls-alignment="right"
                 controls-position="compact"
               />
@@ -61,6 +62,7 @@
                 type="is-light"
                 :exponential="1"
                 :max="volumeMax"
+                expanded
                 controls-alignment="right"
                 controls-position="compact"
               />
@@ -75,6 +77,7 @@
                 :exponential="1"
                 :min="volumeMin"
                 :max="volumeUpperMax"
+                expanded
                 controls-alignment="right"
                 controls-position="compact"
               />
