@@ -1,6 +1,6 @@
 {
   "name": "stakeo",
-  "version": "0.9.0-beta.2",
+  "version": "0.9.0-beta.4",
   "private": true,
   "scripts": {
     "dev": "nuxt",
