@@ -16,10 +16,18 @@
           >{{ $t('nav.stakingCalculator') }}</b-navbar-item
         >
         <b-navbar-item
-          tag="router-link"
-          :to="localePath({ name: 'volume-chart' })"
+          href="https://dem.exchange/"
+          target="_blank"
+          rel="noopener"
         >
-          {{ $t('nav.volumeChart') }}
+          {{ $t('vendor.demex') }}
+        </b-navbar-item>
+        <b-navbar-item
+          href="https://zilswap.io/"
+          target="_blank"
+          rel="noopener"
+        >
+          {{ $t('vendor.zilSwap') }}
         </b-navbar-item>
         <b-navbar-dropdown :label="$t('nav.resources')">
           <b-navbar-item
@@ -30,25 +38,11 @@
             {{ $t('vendor.switcheoTradescan') }}
           </b-navbar-item>
           <b-navbar-item
-            href="https://switcheo.exchange/"
+            href="https://switcheo.network/"
             target="_blank"
             rel="noopener"
           >
-            {{ $t('vendor.switcheoExchange') }}
-          </b-navbar-item>
-          <b-navbar-item
-            href="https://zilswap.io/"
-            target="_blank"
-            rel="noopener"
-          >
-            {{ $t('vendor.zilSwap') }}
-          </b-navbar-item>
-          <b-navbar-item
-            href="https://dem.exchange/"
-            target="_blank"
-            rel="noopener"
-          >
-            {{ $t('vendor.demex') }}
+            {{ $t('vendor.switcheoLabs') }}
           </b-navbar-item>
           <b-navbar-item
             href="https://switcheo.foundation/"
@@ -56,6 +50,13 @@
             rel="noopener"
           >
             {{ $t('vendor.switcheoFoundation') }}
+          </b-navbar-item>
+          <b-navbar-item
+            href="https://nomics.com/exchanges/demex/"
+            target="_blank"
+            rel="noopener"
+          >
+            {{ $t('vendor.nomics') }}
           </b-navbar-item>
         </b-navbar-dropdown>
       </template>
