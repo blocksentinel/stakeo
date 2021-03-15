@@ -6,6 +6,7 @@
       class="mb-4"
       featured
     />
+    <LatestNews />
     <ExchangeList
       :title="$t('exchange.comparablesHeading')"
       :exchanges="comparables"
